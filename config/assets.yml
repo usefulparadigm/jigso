@@ -1,0 +1,17 @@
+embed_assets: on
+
+javascripts:
+  defaults:
+    - public/javascripts/jquery-rails.js
+    - public/javascripts/tabs.js
+    - public/javascripts/plugins/*.js
+    - public/javascripts/application.js
+    # - public/javascripts/views/**/*.js
+    # - app/templates/**/*.jst
+
+stylesheets:
+  all:
+    - public/stylesheets/skeleton/base.css
+    - public/stylesheets/skeleton/skeleton.css
+    - public/stylesheets/skeleton/layout.css
+    - public/stylesheets/application.css

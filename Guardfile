@@ -12,3 +12,5 @@ guard 'test' do
   watch(%r{^app/views/.+\.rb$})                      { "test/integration" }
   watch('app/controllers/application_controller.rb') { ["test/functional", "test/integration"] }
 end
+
+guard 'sass', :input => 'app/assets/sass', :output => 'public/stylesheets'

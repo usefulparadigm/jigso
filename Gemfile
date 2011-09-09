@@ -9,6 +9,21 @@ gem 'sqlite3'
 
 gem 'devise'
 
+gem 'jammit'
+gem 'meta-tags', :require => 'meta_tags'
+
+
+group :development do
+  gem 'mongrel'
+  gem 'guard-sass'
+end
+
+group :test do
+  gem 'guard-test'
+  gem 'factory_girl'
+end
+
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -32,11 +47,3 @@ gem 'devise'
 #   gem 'webrat'
 # end
 
-
-group :development do
-  gem 'guard-test'
-end
-
-group :test do
-  gem 'factory_girl'
-end
