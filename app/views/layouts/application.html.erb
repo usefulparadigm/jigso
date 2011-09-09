@@ -7,8 +7,34 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <header id="page_header"> 
+      <nav id="nav_user">
+          <ul>
+              <% if user_signed_in? %> 
+                  <li><span id="currentuser"><%= current_user.email %></span></li>
+                  &nbsp;
+                  <li><%= link_to "My Profile", edit_user_registration_path %></li>
+                  <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+              <% else %> 
+                  <li><%= link_to "Sign up", new_user_registration_path %></li> 
+                  <li><%= link_to "Sign in", new_user_session_path %></li>
+              <% end %>
+          </ul>
+      </nav>    
+  
+      <div id="page_title">
+          <h1>Ruby on Rails <span>CommunityGuides</span></h1>
+          <h2>has_many <span>:guides</span>, <span>:through</span> => <span>:communityguides</span></h3>
+      </div>
+  </header>
 
-<%= yield %>
+  <section id="flash">
+      <% flash.each do |key, value| %>
+          <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+  </section>  
+
+  <%= yield %>
 
 </body>
 </html>

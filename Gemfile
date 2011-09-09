@@ -7,6 +7,8 @@ gem 'rails', '3.0.10'
 
 gem 'sqlite3'
 
+gem 'devise'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -29,3 +31,12 @@ gem 'sqlite3'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+
+group :development do
+  gem 'guard-test'
+end
+
+group :test do
+  gem 'factory_girl'
+end
