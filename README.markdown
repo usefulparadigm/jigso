@@ -15,11 +15,17 @@ Ultrabase is a skeleton framework for building brand-new website based on Ruby o
 - [rails_admin](https://github.com/sferik/rails_admin/tree/rails-3.0) for admin page
 - [nested_form](https://github.com/ryanb/nested_form) for nested form manipulation
 - jQuery plugins
-	- [Raty]() for star rating
+	- [Raty](http://www.wbotelhos.com/raty/) for star rating
 
 ### Installation & Setup
 
 TBD.
+
+
+### TODOs
+
+- sign in on heroku
+- uploding in heroku
 
 
 ### Demo
