@@ -5,10 +5,20 @@
   <%= @entry.title %>
 </p>
 
+<span class="rating" data-rate="3"></span>
+
 <p>
   <b>Body:</b>
   <%= @entry.body %>
 </p>
+
+<ul>
+  <% @entry.attachments.each do |attachment| %>
+    <li>
+    <%= attachment.description %> - <%= link_to("Download", attachment.file_url) %>
+    </li>
+  <% end %>
+</ul>
 
 
 <%= link_to 'Edit', edit_entry_path(@entry) %> |

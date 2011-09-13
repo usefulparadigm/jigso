@@ -11,7 +11,10 @@
 
 <% @entries.each do |entry| %>
   <tr>
-    <td><%= entry.title %></td>
+    <td>
+			<%= entry.title %>
+			<span class="rating"></span>
+		</td>
     <td><%= entry.body %></td>
     <td><%= link_to 'Show', entry %></td>
     <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
@@ -23,3 +26,4 @@
 <br />
 
 <%= link_to 'New Entry', new_entry_path %>
+

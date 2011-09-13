@@ -5,13 +5,19 @@ Ultrabase is a skeleton framework for building brand-new website based on Ruby o
 ### Dependent Components
 
 - Ruby on Rails 3.0.10 (I don't like asset pipeline!!)
+- jQuery for frontend javascript processing
 - [Devise](https://github.com/plataformatec/devise) for authentication
 - [Jammit](http://documentcloud.github.com/jammit/) for asset packaging
-- jQuery for frontend javascript processing
 - [Skeleton](http://www.getskeleton.com/) for frontend layout
 - [meta-tags](https://github.com/kpumuk/meta-tags) for Search Engine Optimization(SEO)
+- [Transitions](https://github.com/qoobaa/transitions) for state machine
+- [gravastic](https://github.com/chrislloyd/gravtastic) for Gravatar 
+- [rails_admin](https://github.com/sferik/rails_admin/tree/rails-3.0) for admin page
+- [nested_form](https://github.com/ryanb/nested_form) for nested form manipulation
+- jQuery plugins
+	- [Raty]() for star rating
 
-### Usage
+### Installation & Setup
 
 TBD.
 

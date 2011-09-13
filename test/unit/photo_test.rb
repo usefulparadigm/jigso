@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class EntryTest < ActiveSupport::TestCase
+class PhotoTest < ActiveSupport::TestCase
   # Replace this with your real tests.
   test "the truth" do
     assert true
@@ -8,13 +8,12 @@ class EntryTest < ActiveSupport::TestCase
 end
 # == Schema Information
 #
-# Table name: entries
+# Table name: photos
 #
 #  id         :integer         not null, primary key
-#  title      :string(255)
-#  body       :text
+#  entry_id   :integer
+#  image      :string(255)
 #  created_at :datetime
 #  updated_at :datetime
-#  state      :string(255)
 #
 

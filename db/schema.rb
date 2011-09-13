@@ -10,14 +10,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110909085855) do
+ActiveRecord::Schema.define(:version => 20110913040149) do
+
+  create_table "attachments", :force => true do |t|
+    t.text     "description"
+    t.string   "file"
+    t.integer  "attachable_id"
+    t.string   "attachable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "entries", :force => true do |t|
     t.string   "title"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "state"
   end
+
+  add_index "entries", ["state"], :name => "index_entries_on_state"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

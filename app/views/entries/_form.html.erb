@@ -1,4 +1,4 @@
-<%= form_for(@entry) do |f| %>
+<%= nested_form_for @entry, :html => { :multipart => true } do |f| %>
   <% if @entry.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
@@ -17,8 +17,22 @@
   </div>
   <div class="field">
     <%= f.label :body %><br />
-    <%= f.text_area :body %>
+    <%= f.text_area :body, :rows => 5 %>
   </div>
+
+	<%= f.fields_for :attachments do |attachment_form|  %>
+		<p>
+			<%= attachment_form.label :file %><br />
+			<%= attachment_form.file_field :file %>
+		</p>
+		<p>
+			<%= attachment_form.label :description %><br />
+			<%= attachment_form.text_area :description, :rows => 2 %>
+		</p>
+		<%= attachment_form.link_to_remove "Remove this attachment" %>
+	<% end %>
+	<%= f.link_to_add "Add attachment", :attachments %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

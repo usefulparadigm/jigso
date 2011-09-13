@@ -1,0 +1,24 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  description: MyText
+  file: MyString
+  attachable: 
+
+two:
+  description: MyText
+  file: MyString
+  attachable: 
+# == Schema Information
+#
+# Table name: attachments
+#
+#  id              :integer         not null, primary key
+#  description     :text
+#  file            :string(255)
+#  attachable_id   :integer
+#  attachable_type :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+

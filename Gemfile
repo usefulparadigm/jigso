@@ -8,14 +8,28 @@ gem 'rails', '3.0.10'
 gem 'sqlite3'
 
 gem 'devise'
+gem "omniauth", "0.2.0"
+
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'flash_cookie_session'
 
 gem 'jammit'
 gem 'meta-tags', :require => 'meta_tags'
+gem 'gravtastic'
+gem 'nested_form'
+gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 
+
+# gem 'fastercsv' # Only required on Ruby 1.8 and below
+# gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git', :branch => 'rails-3.0'
+
+gem "transitions", :require => ["transitions", "active_record/transitions"]
 
 group :development do
   gem 'mongrel'
   gem 'guard-sass'
+  # gem 'rails-footnotes', '>= 3.7'
 end
 
 group :test do

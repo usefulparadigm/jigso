@@ -2,5 +2,7 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 $(function() {
+
+	$('.rating').raty({path: '/images/raty', start: 3});
 	
 });

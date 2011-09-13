@@ -4,6 +4,7 @@ javascripts:
   defaults:
     - public/javascripts/jquery-rails.js
     - public/javascripts/tabs.js
+    - public/javascripts/nested_form.js
     - public/javascripts/plugins/*.js
     - public/javascripts/application.js
     # - public/javascripts/views/**/*.js

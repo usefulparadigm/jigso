@@ -1,21 +1,20 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  title: MyString
-  body: MyText
+  entry_id: 1
+  image: MyString
 
 two:
-  title: MyString
-  body: MyText
+  entry_id: 1
+  image: MyString
 # == Schema Information
 #
-# Table name: entries
+# Table name: photos
 #
 #  id         :integer         not null, primary key
-#  title      :string(255)
-#  body       :text
+#  entry_id   :integer
+#  image      :string(255)
 #  created_at :datetime
 #  updated_at :datetime
-#  state      :string(255)
 #
 

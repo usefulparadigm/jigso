@@ -1,8 +1,12 @@
 Ultrabase::Application.routes.draw do
 
+  match '/auth/:provider/callback', :to => 'sessions#create'
+
   devise_for :users
 
-  resources :entries
+  resources :entries do
+    resources :photos, :only => [:create, :destroy]
+  end  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

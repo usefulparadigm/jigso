@@ -18,16 +18,6 @@
 
 <%= include_stylesheets :all %>
 <%= csrf_meta_tag %>
-<script src="http://www.google.com/jsapi"></script>
-<script>
- google.load( "webfont", "1" );
- google.setOnLoadCallback(function() {
-  WebFont.load({ custom: {
-   families: [ "NanumGothic" ],
-   urls: [ "http://fontface.kr/NanumGothic/css" ]
-  }});
- });
-</script>
 </head>
 <body>
 
@@ -74,5 +64,6 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script>window.jQuery || document.write("<script src='javascripts/jquery-1.6.2.min.js'>\x3C/script>")</script>
 <%= include_javascripts :defaults %>
+<%= yield :javascript %>
 </body>
 </html>
