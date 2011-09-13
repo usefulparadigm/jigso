@@ -3,6 +3,8 @@ class Entry < ActiveRecord::Base
   has_many   :attachments, :as => :attachable, :dependent => :destroy
   accepts_nested_attributes_for :attachments, :allow_destroy => true
 
+  make_voteable
+
   include ActiveRecord::Transitions
 
   state_machine do 

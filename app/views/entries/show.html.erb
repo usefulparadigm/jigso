@@ -12,6 +12,12 @@
   <%= @entry.body %>
 </p>
 
+<div class="votes">
+	<%= link_to "Like", entry_votes_path(@entry, :flag => 'up'), :method => 'post' %> : <%= @entry.up_votes %> /
+	<%= link_to "Dislike", entry_votes_path(@entry, :flag => 'down'), :method => 'post' %> : <%= @entry.down_votes %> /
+	<%= link_to "Clear", entry_vote_path(@entry, 1), :method => 'delete' %>
+</div>	
+
 <ul>
   <% @entry.attachments.each do |attachment| %>
     <li>

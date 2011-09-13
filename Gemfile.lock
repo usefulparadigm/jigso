@@ -1,9 +1,3 @@
-GIT
-  remote: git://github.com/ctran/annotate_models.git
-  revision: 634b6ac1ccf4d9f0ddfecfc8123a58adf3d20eb8
-  specs:
-    annotate (2.4.1.beta1)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -39,6 +33,7 @@ GEM
       activesupport (= 3.0.10)
     activesupport (3.0.10)
     addressable (2.2.6)
+    annotate (2.4.0)
     arel (2.0.10)
     bcrypt-ruby (3.0.0)
     builder (2.1.2)
@@ -78,6 +73,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    make_voteable (0.1.1)
+      activerecord (~> 3.0)
     meta-tags (1.2.4)
       actionpack
     mime-types (1.16)
@@ -184,7 +181,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  annotate!
+  annotate
   carrierwave
   devise
   factory_girl
@@ -193,6 +190,7 @@ DEPENDENCIES
   guard-sass
   guard-test
   jammit
+  make_voteable
   meta-tags
   mini_magick
   mongrel

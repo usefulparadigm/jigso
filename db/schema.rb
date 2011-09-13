@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110913040149) do
+ActiveRecord::Schema.define(:version => 20110913071732) do
 
   create_table "attachments", :force => true do |t|
     t.text     "description"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(:version => 20110913040149) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "state"
+    t.integer  "up_votes",   :default => 0, :null => false
+    t.integer  "down_votes", :default => 0, :null => false
   end
 
   add_index "entries", ["state"], :name => "index_entries_on_state"
@@ -47,10 +49,26 @@ ActiveRecord::Schema.define(:version => 20110913040149) do
     t.datetime "confirmation_sent_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "up_votes",                              :default => 0,  :null => false
+    t.integer  "down_votes",                            :default => 0,  :null => false
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "votings", :force => true do |t|
+    t.string   "voteable_type"
+    t.integer  "voteable_id"
+    t.string   "voter_type"
+    t.integer  "voter_id"
+    t.boolean  "up_vote",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votings", ["voteable_type", "voteable_id", "voter_type", "voter_id"], :name => "unique_voters", :unique => true
+  add_index "votings", ["voteable_type", "voteable_id"], :name => "index_votings_on_voteable_type_and_voteable_id"
+  add_index "votings", ["voter_type", "voter_id"], :name => "index_votings_on_voter_type_and_voter_id"
 
 end

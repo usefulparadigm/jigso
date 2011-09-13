@@ -6,7 +6,10 @@ Ultrabase::Application.routes.draw do
 
   resources :entries do
     resources :photos, :only => [:create, :destroy]
+    resources :votes, :only => [:create, :destroy]
   end  
+  
+  root :to => "entries#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -57,7 +60,6 @@ Ultrabase::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "entries#index"
 
   # See how all your routes lay out with "rake routes"
 

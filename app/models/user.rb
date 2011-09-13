@@ -8,9 +8,11 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
+  make_voter
+
   include Gravtastic
   gravtastic
-  
+
 end
 # == Schema Information
 #
