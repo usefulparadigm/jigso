@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110913071732) do
+ActiveRecord::Schema.define(:version => 20110913153913) do
 
   create_table "attachments", :force => true do |t|
     t.text     "description"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20110913071732) do
     t.string   "state"
     t.integer  "up_votes",   :default => 0, :null => false
     t.integer  "down_votes", :default => 0, :null => false
+    t.string   "body_html"
   end
 
   add_index "entries", ["state"], :name => "index_entries_on_state"

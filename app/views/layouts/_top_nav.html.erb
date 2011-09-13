@@ -1,9 +1,9 @@
 <div id="top_nav">
     <ul>
         <% if user_signed_in? %> 
-            <li><span id="currentuser">
-							<%= image_tag current_user.gravatar_url %>
-							<%= current_user.email %></span></li>
+            <li>
+							<%#= image_tag current_user.gravatar_url %>
+							<%= current_user.email %></li>
             <li><%= link_to "My Profile", edit_user_registration_path %></li>
             <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
         <% else %> 

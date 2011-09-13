@@ -1,21 +1,25 @@
-<p id="notice"><%= notice %></p>
+<h3><%=title @entry.title %></h3>
+<div class="header">
+	<abbr class="timeago" title="<%= @entry.created_at(:to_db) %>"><%= @entry.created_at.to_s(:short) %></abbr>
+</div>	
 
-<p>
-  <b>Title:</b>
-  <%= @entry.title %>
+<p class="body">
+	<%= @entry.body_html %>
 </p>
 
-<span class="rating" data-rate="3"></span>
-
-<p>
-  <b>Body:</b>
-  <%= @entry.body %>
-</p>
+<div class="tags">
+	<h5>태그</h5>
+</div>
 
 <div class="votes">
-	<%= link_to "Like", entry_votes_path(@entry, :flag => 'up'), :method => 'post' %> : <%= @entry.up_votes %> /
-	<%= link_to "Dislike", entry_votes_path(@entry, :flag => 'down'), :method => 'post' %> : <%= @entry.down_votes %> /
-	<%= link_to "Clear", entry_vote_path(@entry, 1), :method => 'delete' %>
+	<h5>평가</h5>
+	<% if current_user && current_user.voted?(@entry) %>
+		당신은 이 항목을 <%= current_user.up_voted?(@entry) ? '좋아' : '싫어' %> 합니다. 
+		<%= link_to "취소", entry_vote_path(@entry, 1), :method => 'delete' %>
+	<% else %>
+		<%= link_to "좋아요", entry_votes_path(@entry, :flag => 'up'), :method => 'post' %>: <%= @entry.up_votes %> |
+		<%= link_to "싫어요", entry_votes_path(@entry, :flag => 'down'), :method => 'post' %>: <%= @entry.down_votes %>
+	<% end %>	
 </div>	
 
 <ul>

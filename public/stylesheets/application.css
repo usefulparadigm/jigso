@@ -1,2 +1,13 @@
-body {
-  font-family: 'NanumGothic'; }
+textarea {
+  width: 95%; }
+
+#page {
+  margin-top: 10px; }
+
+#header {
+  position: relative; }
+
+#top_nav {
+  float: right; }
+  #top_nav li {
+    display: inline; }

@@ -18,6 +18,7 @@ gem 'jammit'
 gem 'meta-tags', :require => 'meta_tags'
 gem 'gravtastic'
 gem 'nested_form'
+gem 'auto_html'
 
 # gem 'fastercsv' # Only required on Ruby 1.8 and below
 # gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git', :branch => 'rails-3.0'
@@ -29,11 +30,12 @@ gem 'make_voteable'
 group :development do
   gem 'mongrel'
   gem 'guard-sass'
+  gem 'guard-test'
+  gem 'guard-livereload'
   # gem 'rails-footnotes', '>= 3.7'
 end
 
 group :test do
-  gem 'guard-test'
   gem 'factory_girl'
 end
 

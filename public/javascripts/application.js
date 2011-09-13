@@ -4,5 +4,5 @@
 $(function() {
 
 	$('.rating').raty({path: '/images/raty', start: 3});
-	
+	$(".timeago").timeago();	
 });

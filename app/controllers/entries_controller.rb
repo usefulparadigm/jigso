@@ -1,5 +1,4 @@
 class EntriesController < ApplicationController
-  # only index and show are accessible for non-authenticated users
   before_filter :authenticate_user!, :except => [:index, :show]
 
   # GET /entries

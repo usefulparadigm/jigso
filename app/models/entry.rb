@@ -14,7 +14,15 @@ class Entry < ActiveRecord::Base
       transitions :to => :published, :from => :draft #, :on_transition => :do_publish
     end
   end
-    
+  
+  auto_html_for :body do
+    html_escape
+    image
+    youtube(:width => 400, :height => 250)
+    link :target => "_blank", :rel => "nofollow"
+    simple_format
+  end
+      
 end
 # == Schema Information
 #
