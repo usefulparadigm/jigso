@@ -46,6 +46,7 @@ GEM
     carrierwave (0.5.7)
       activesupport (~> 3.0)
     cgi_multipart_eof_fix (2.5.0)
+    chronic (0.6.4)
     daemons (1.1.4)
     devise (1.4.5)
       bcrypt-ruby (~> 3.0)
@@ -192,6 +193,9 @@ GEM
     tzinfo (0.3.29)
     warden (1.0.5)
       rack (>= 1.0)
+    whenever (0.7.0)
+      activesupport (>= 2.3.4)
+      chronic (~> 0.6.3)
     yui-compressor (0.9.6)
       POpen4 (>= 0.1.4)
 
@@ -220,3 +224,4 @@ DEPENDENCIES
   rails (= 3.0.10)
   sqlite3
   transitions
+  whenever

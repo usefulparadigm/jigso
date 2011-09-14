@@ -17,6 +17,7 @@ Ultrabase is a skeleton framework for building brand-new website based on Ruby o
 - [make_voteable](https://github.com/medihack/make_voteable) for voting
 - [auto_html](https://github.com/dejan/auto_html) for transforming URLs to appropriate resource
 - [kaminari](https://github.com/amatsuda/kaminari) for pagination
+- [whenever](https://github.com/javan/whenever) for job scheduling
 - jQuery plugins
 	- [raty](http://www.wbotelhos.com/raty/) for star rating (not used yet)
 	- [timeago](http://timeago.yarp.com/) for pretty timestamp
