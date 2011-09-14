@@ -6,18 +6,20 @@ Ultrabase is a skeleton framework for building brand-new website based on Ruby o
 
 - Ruby on Rails 3.0.10 (I don't like asset pipeline!!)
 - jQuery for frontend javascript processing
-- [Devise](https://github.com/plataformatec/devise) for authentication
-- [Jammit](http://documentcloud.github.com/jammit/) for asset packaging
-- [Skeleton](http://www.getskeleton.com/) for frontend layout
+- [devise](https://github.com/plataformatec/devise) for authentication
+- [jammit](http://documentcloud.github.com/jammit/) for asset packaging
+- [skeleton](http://www.getskeleton.com/) for frontend layout
 - [meta-tags](https://github.com/kpumuk/meta-tags) for Search Engine Optimization(SEO)
-- [Transitions](https://github.com/qoobaa/transitions) for state machine
+- [transitions](https://github.com/qoobaa/transitions) for state machine
 - [gravastic](https://github.com/chrislloyd/gravtastic) for Gravatar 
 - [rails_admin](https://github.com/sferik/rails_admin/tree/rails-3.0) for admin page
 - [nested_form](https://github.com/ryanb/nested_form) for nested form manipulation
 - [make_voteable](https://github.com/medihack/make_voteable) for voting
 - [auto_html](https://github.com/dejan/auto_html) for transforming URLs to appropriate resource
+- [kaminari](https://github.com/amatsuda/kaminari) for pagination
 - jQuery plugins
-	- [Raty](http://www.wbotelhos.com/raty/) for star rating
+	- [raty](http://www.wbotelhos.com/raty/) for star rating (not used yet)
+	- [timeago](http://timeago.yarp.com/) for pretty timestamp
 
 ### Installation & Setup
 
@@ -30,6 +32,9 @@ TBD.
 - activity stream (timeline)
 - tagging
 - controller refactoring
+- following/subscription
+- login form customizing
+- my page(dashboard)
 
 
 ### Demo

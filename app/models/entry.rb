@@ -4,6 +4,7 @@ class Entry < ActiveRecord::Base
   accepts_nested_attributes_for :attachments, :allow_destroy => true
 
   make_voteable
+  paginates_per 10
 
   include ActiveRecord::Transitions
 

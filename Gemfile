@@ -2,9 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.10'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'sqlite3'
 
 gem 'devise'
@@ -19,6 +16,7 @@ gem 'meta-tags', :require => 'meta_tags'
 gem 'gravtastic'
 gem 'nested_form'
 gem 'auto_html'
+gem 'kaminari'
 
 # gem 'fastercsv' # Only required on Ruby 1.8 and below
 # gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git', :branch => 'rails-3.0'
@@ -30,8 +28,9 @@ gem 'make_voteable'
 group :development do
   gem 'mongrel'
   gem 'guard-sass'
-  gem 'guard-test'
   gem 'guard-livereload'
+  gem 'guard-pow'
+  # gem 'guard-test'
   # gem 'rails-footnotes', '>= 3.7'
 end
 

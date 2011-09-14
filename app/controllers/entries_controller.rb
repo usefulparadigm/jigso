@@ -4,7 +4,7 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.xml
   def index
-    @entries = Entry.all
+    @entries = Entry.page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
