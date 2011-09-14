@@ -19,6 +19,7 @@ Ultrabase is a skeleton framework for building brand-new website based on Ruby o
 - [kaminari](https://github.com/amatsuda/kaminari) for pagination
 - [whenever](https://github.com/javan/whenever) for job scheduling
 - [rails_config](https://github.com/railsjedi/rails_config) for global app settings
+- [inherited_resources](https://github.com/josevalim/inherited_resources) for controller/resource abstraction
 - jQuery plugins
 	- [raty](http://www.wbotelhos.com/raty/) for star rating (not used yet)
 	- [timeago](http://timeago.yarp.com/) for pretty timestamp

@@ -9,6 +9,7 @@ gem "omniauth", "0.2.0"
 gem "cancan"
 
 gem 'rails_config'
+gem 'inherited_resources'
 
 gem 'carrierwave'
 gem 'mini_magick'
