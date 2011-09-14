@@ -2,30 +2,18 @@
 	<%= link_to 'New Entry', new_entry_path, :class => 'button' %>
 </div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<ul class="entries">
 <% @entries.each do |entry| %>
-  <tr>
-    <td>
-			<%= entry.title %>
-			<span class="rating"></span>
-		</td>
-    <td><%= entry.body %></td>
-    <td><%= link_to 'Show', entry %></td>
-    <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-    <td><%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+	<li class="entry">
+		<%= link_to image_tag(first_image(entry.body_html), :width => 80, :height => 80, :class => 'thumb'), entry %>
+		<div class="content">
+			<h5><%= link_to entry.title, entry %></h5>
+	    <p><%= strip_tags(entry.body_html).truncate(100) %></p>
+		</div>	
+	</li>
 <% end %>
-</table>
+</ul>
 
-<br />
 
 <%= paginate @entries %>
 

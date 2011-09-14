@@ -32,5 +32,7 @@
 </ul>
 
 
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Edit', edit_entry_path(@entry), :class => "#{'hidden' if cannot?(:update, @entry)}" %> |
+<%= link_to 'Destroy', @entry, :confirm => 'Are you sure?', :method => :delete,
+						:class => "#{'hidden' if cannot?(:destroy, @entry)}" %> |
 <%= link_to 'Back', entries_path %>

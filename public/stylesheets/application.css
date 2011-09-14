@@ -12,6 +12,17 @@ textarea {
   #top_nav li {
     display: inline; }
 
+.hidden {
+  display: none; }
+
+.entry {
+  overflow: auto;
+  margin: 0;
+  padding: 10px 0; }
+  .entry .thumb {
+    float: left;
+    margin-right: 10px; }
+
 /* Success, info, notice and error/alert boxes
 -------------------------------------------------------------- */
 .error,

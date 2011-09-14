@@ -24,4 +24,8 @@ module ApplicationHelper
     content_tag("ul", msgs.join("\n"), :id => css_id)
   end
 
+  def first_image(html)
+    html =~ /\<img.*?src="(.*?)"/ ? $1 : "/images/no_image_thumb.png"
+  end
+
 end

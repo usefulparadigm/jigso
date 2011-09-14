@@ -4,9 +4,11 @@ class Ability
   # https://github.com/ryanb/cancan/wiki/defining-abilities
 
   def initialize(user)
-    
-    can :manage, Entry
-    can [:destroy], Entry, :user_id => user.id
+
+    user ||= User.new # guest user (not logged in)
+
+    can [:read, :create], Entry
+    can [:update, :destroy], Entry, :user_id => user.id
     
     # Define abilities for the passed in user here. For example:
     #

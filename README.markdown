@@ -39,6 +39,7 @@ TBD.
 - following/subscription
 - login form customizing
 - my page(dashboard)
+- add comments
 
 
 ### Demo
