@@ -28,6 +28,7 @@ gem 'kaminari'
 gem "transitions", :require => ["transitions", "active_record/transitions"]
 gem 'annotate' #, :git => 'git://github.com/ctran/annotate_models.git'
 gem 'make_voteable'
+# gem 'meta_where'
 
 # background job processing
 gem 'whenever', :require => false

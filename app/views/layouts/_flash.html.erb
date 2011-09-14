@@ -3,3 +3,13 @@
 		<div class="flash <%= key %>"><%= value %></div>
 	<% end %>
 </div>  
+
+<% content_for :javascript do %>
+<script type="text/javascript" charset="utf-8">
+$(function() {
+	$('#flash').delay(500).fadeIn('normal', function() {
+     $(this).delay(2500).fadeOut();
+  });
+});	
+</script>
+<% end %>

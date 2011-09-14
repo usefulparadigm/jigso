@@ -30,8 +30,8 @@
 		</div>
 		<div id="main" class="sixteen columns">
 			<div class="row">
-				<%#= render 'layouts/flash' %>
 				<div id="content" class="ten columns alpha">
+					<%= render 'layouts/flash', :flash => flash %>
 					<%= yield %>
 				</div>
 				<div id="side" class="six columns omega">
