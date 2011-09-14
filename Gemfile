@@ -6,6 +6,9 @@ gem 'sqlite3'
 
 gem 'devise'
 gem "omniauth", "0.2.0"
+gem "cancan"
+
+gem 'rails_config'
 
 gem 'carrierwave'
 gem 'mini_magick'
@@ -66,3 +69,4 @@ end
 #   gem 'webrat'
 # end
 
+gem "rails_config"

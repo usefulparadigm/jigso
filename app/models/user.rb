@@ -8,10 +8,14 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
+  has_many :entries #, :dependent => :destroy
+
   make_voter
 
   include Gravtastic
   gravtastic
+  
+  def to_s; email end
 
 end
 # == Schema Information

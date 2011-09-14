@@ -41,8 +41,9 @@ GEM
       redcarpet
       rinku
       tag_helper
-    bcrypt-ruby (3.0.0)
+    bcrypt-ruby (3.0.1)
     builder (2.1.2)
+    cancan (1.6.5)
     carrierwave (0.5.7)
       activesupport (~> 3.0)
     cgi_multipart_eof_fix (2.5.0)
@@ -165,6 +166,8 @@ GEM
       activesupport (= 3.0.10)
       bundler (~> 1.0)
       railties (= 3.0.10)
+    rails_config (0.2.4)
+      activesupport (>= 3.0)
     railties (3.0.10)
       actionpack (= 3.0.10)
       activesupport (= 3.0.10)
@@ -205,6 +208,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   auto_html
+  cancan
   carrierwave
   devise
   factory_girl
@@ -222,6 +226,7 @@ DEPENDENCIES
   nested_form
   omniauth (= 0.2.0)
   rails (= 3.0.10)
+  rails_config
   sqlite3
   transitions
   whenever

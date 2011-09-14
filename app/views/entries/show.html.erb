@@ -1,6 +1,7 @@
 <h3><%=title @entry.title %></h3>
 <div class="header">
 	<abbr class="timeago" title="<%= @entry.created_at(:to_db) %>"><%= @entry.created_at.to_s(:short) %></abbr>
+	by <%= @entry.user %>
 </div>	
 
 <p class="body">
