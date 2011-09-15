@@ -40,15 +40,15 @@
 
 <hr />
 
-<h5>Comments</h5>
-<%= render 'shared/disqus/disqus' %>
-
-<hr />
-
 <h5>Related Entries</h5>
 <ul class="entries empty">
 	<%= render @entry.related_entries %>
 </ul>
+
+<hr />
+
+<h5>Comments</h5>
+<%= render 'shared/disqus/disqus' %>
 
 <% content_for :javascript do %>
 	<%= render 'shared/disqus/comment_count' %>

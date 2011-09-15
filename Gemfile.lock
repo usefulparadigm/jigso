@@ -55,8 +55,6 @@ GEM
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
       warden (~> 1.0.3)
-    disqus (1.0.4)
-      json
     em-websocket (0.3.1)
       addressable (>= 2.1.1)
       eventmachine (>= 0.12.9)
@@ -85,6 +83,7 @@ GEM
       guard (>= 0.4.0)
       sass (>= 3.1)
     has_scope (0.5.0)
+    high_voltage (1.0.1)
     i18n (0.5.0)
     inherited_resources (1.3.0)
       has_scope (~> 0.5.0)
@@ -221,13 +220,13 @@ DEPENDENCIES
   cancan
   carrierwave
   devise
-  disqus
   factory_girl
   flash_cookie_session
   gravtastic
   guard-livereload
   guard-pow
   guard-sass
+  high_voltage
   inherited_resources
   jammit
   kaminari
@@ -239,6 +238,7 @@ DEPENDENCIES
   omniauth (= 0.2.0)
   rails (= 3.0.10)
   rails_config
+  redcarpet
   sqlite3
   transitions
   whenever

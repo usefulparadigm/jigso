@@ -24,6 +24,9 @@ Ultrabase is a skeleton framework for building brand-new website based on Ruby o
 - [meta_where](https://github.com/ernie/meta_where) for query syntax enhancement (not used yet)
 - [acts-as-taggable-on](https://github.com/mbleigh/acts-as-taggable-on) for tagging
 - [disqus](http://disqus.com/) for commenting system
+- [high_voltage](https://github.com/thoughtbot/high_voltage) for static pages
+- [omniauth]() for 3rd party authentication
+- [redcarpet](https://github.com/tanoku/redcarpet) for markdown handling
 - jQuery plugins
 	- [raty](http://www.wbotelhos.com/raty/) for star rating (not used yet)
 	- [timeago](http://timeago.yarp.com/) for pretty timestamp
@@ -44,6 +47,8 @@ TBD.
 - my page(dashboard)
 - atom feed
 - pagination styling with sass processing
+- omniauth
+- open api support
 
 
 ### DEMO

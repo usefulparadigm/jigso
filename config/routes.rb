@@ -1,5 +1,7 @@
 Ultrabase::Application.routes.draw do
 
+  resources :pages
+
   match '/auth/:provider/callback', :to => 'sessions#create'
 
   devise_for :users

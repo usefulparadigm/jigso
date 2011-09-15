@@ -21,7 +21,8 @@ gem 'gravtastic'
 gem 'nested_form'
 gem 'auto_html'
 gem 'kaminari'
-gem 'disqus'
+gem 'high_voltage'
+gem 'redcarpet'
 
 # gem 'fastercsv' # Only required on Ruby 1.8 and below
 # gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git', :branch => 'rails-3.0'
@@ -74,3 +75,4 @@ end
 # end
 
 gem "rails_config"
+gem "high_voltage"
