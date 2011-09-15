@@ -3,6 +3,7 @@ Ultrabase::Application.routes.draw do
   match '/auth/:provider/callback', :to => 'sessions#create'
 
   devise_for :users
+  resources :users
 
   resources :entries do
     resources :photos, :only => [:create, :destroy]

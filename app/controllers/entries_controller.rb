@@ -8,10 +8,9 @@ class EntriesController < ApplicationController
     @entries = Entry.order('created_at DESC').page(params[:page])
     respond_with(@entries)
   end
-  
+
   def create
-    @entry = Entry.new(params[:entry])
-    @entry.user = current_user
+    @entry = current_user.entries.build(params[:entry])
     create!
   end
 

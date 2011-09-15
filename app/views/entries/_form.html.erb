@@ -12,21 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
+
   <div class="field">
-    <%= f.label :body %><br />
+    <%= f.label :body %>
     <%= f.text_area :body, :rows => 5 %>
   </div>
 
+	<div class="field">
+    <%= f.label :tag_list %>
+    <%= f.text_field :tag_list %>
+	</div>	
+
 	<%= f.fields_for :attachments do |attachment_form|  %>
 		<p>
-			<%= attachment_form.label :file %><br />
+			<%= attachment_form.label :file %>
 			<%= attachment_form.file_field :file %>
 		</p>
 		<p>
-			<%= attachment_form.label :description %><br />
+			<%= attachment_form.label :description %>
 			<%= attachment_form.text_area :description, :rows => 2 %>
 		</p>
 		<%= attachment_form.link_to_remove "Remove this attachment" %>

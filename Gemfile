@@ -21,6 +21,7 @@ gem 'gravtastic'
 gem 'nested_form'
 gem 'auto_html'
 gem 'kaminari'
+gem 'disqus'
 
 # gem 'fastercsv' # Only required on Ruby 1.8 and below
 # gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git', :branch => 'rails-3.0'
@@ -29,6 +30,7 @@ gem "transitions", :require => ["transitions", "active_record/transitions"]
 gem 'annotate' #, :git => 'git://github.com/ctran/annotate_models.git'
 gem 'make_voteable'
 # gem 'meta_where'
+gem 'acts-as-taggable-on', '~>2.1.0'
 
 # background job processing
 gem 'whenever', :require => false

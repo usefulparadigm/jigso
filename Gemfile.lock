@@ -33,6 +33,8 @@ GEM
       activemodel (= 3.0.10)
       activesupport (= 3.0.10)
     activesupport (3.0.10)
+    acts-as-taggable-on (2.1.1)
+      rails
     addressable (2.2.6)
     annotate (2.4.0)
     arel (2.0.10)
@@ -53,6 +55,8 @@ GEM
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
       warden (~> 1.0.3)
+    disqus (1.0.4)
+      json
     em-websocket (0.3.1)
       addressable (>= 2.1.1)
       eventmachine (>= 0.12.9)
@@ -211,11 +215,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on (~> 2.1.0)
   annotate
   auto_html
   cancan
   carrierwave
   devise
+  disqus
   factory_girl
   flash_cookie_session
   gravtastic

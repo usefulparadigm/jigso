@@ -4,16 +4,17 @@
 	by <%= @entry.user %>
 </div>	
 
-<p class="body">
+<div class="body">
 	<%= @entry.body_html %>
-</p>
+</div>
 
 <div class="tags">
-	<h5>태그</h5>
+	<h5>Tags</h5>
+	<%=raw @entry.tags.map { |t| link_to(t) }.join(', ') %>
 </div>
 
 <div class="votes">
-	<h5>평가</h5>
+	<h5>Vote</h5>
 	<% if current_user && current_user.voted?(@entry) %>
 		당신은 이 항목을 <%= current_user.up_voted?(@entry) ? '좋아' : '싫어' %> 합니다. 
 		<%= link_to "취소", entry_vote_path(@entry, 1), :method => 'delete' %>
@@ -36,3 +37,19 @@
 <%= link_to 'Destroy', @entry, :confirm => 'Are you sure?', :method => :delete,
 						:class => "#{'hidden' if cannot?(:destroy, @entry)}" %> |
 <%= link_to 'Back', entries_path %>
+
+<hr />
+
+<h5>Comments</h5>
+<%= render 'shared/disqus/disqus' %>
+
+<hr />
+
+<h5>Related Entries</h5>
+<ul class="entries empty">
+	<%= render @entry.related_entries %>
+</ul>
+
+<% content_for :javascript do %>
+	<%= render 'shared/disqus/comment_count' %>
+<% end %>

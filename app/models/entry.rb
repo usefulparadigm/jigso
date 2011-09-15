@@ -1,12 +1,13 @@
 class Entry < ActiveRecord::Base
-  attr_accessible :title, :body, :attachments_attributes
+  attr_accessible :title, :body, :attachments_attributes, :tag_list
   has_many   :attachments, :as => :attachable, :dependent => :destroy
   accepts_nested_attributes_for :attachments, :allow_destroy => true
 
   belongs_to :user
 
-  make_voteable
   # paginates_per 10
+  make_voteable
+  acts_as_taggable
 
   include ActiveRecord::Transitions
 
@@ -25,6 +26,8 @@ class Entry < ActiveRecord::Base
     link :target => "_blank", :rel => "nofollow"
     simple_format
   end
+
+  def related_entries; find_related_tags end
       
 end
 # == Schema Information

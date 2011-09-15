@@ -5,3 +5,4 @@ tmp/
 Procfile
 .DS_Store
 public/uploads/
+.sass-cache

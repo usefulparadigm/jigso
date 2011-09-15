@@ -2,7 +2,8 @@
 
 Ultrabase is a skeleton framework for building brand-new website based on Ruby on Rails web framework. You can clone this skeleton code and customize as your will.
 
-### Dependent Components
+
+### Dependencies
 
 - Ruby on Rails 3.0.10 (I don't like asset pipeline!!)
 - jQuery for frontend javascript processing
@@ -21,9 +22,12 @@ Ultrabase is a skeleton framework for building brand-new website based on Ruby o
 - [rails_config](https://github.com/railsjedi/rails_config) for global app settings
 - [inherited_resources](https://github.com/josevalim/inherited_resources) for controller/resource abstraction
 - [meta_where](https://github.com/ernie/meta_where) for query syntax enhancement (not used yet)
+- [acts-as-taggable-on](https://github.com/mbleigh/acts-as-taggable-on) for tagging
+- [disqus](http://disqus.com/) for commenting system
 - jQuery plugins
 	- [raty](http://www.wbotelhos.com/raty/) for star rating (not used yet)
 	- [timeago](http://timeago.yarp.com/) for pretty timestamp
+
 
 ### Installation & Setup
 
@@ -34,15 +38,15 @@ TBD.
 
 - uploding in heroku
 - activity stream (timeline)
-- tagging
 - controller refactoring
 - following/subscription
 - login form customizing
 - my page(dashboard)
-- add comments
+- atom feed
+- pagination styling with sass processing
 
 
-### Demo
+### DEMO
 
 - [http://ultrabase.heroku.com](http://ultrabase.heroku.com)
 
