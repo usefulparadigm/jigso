@@ -11,11 +11,16 @@ class User < ActiveRecord::Base
   has_many :entries #, :dependent => :destroy
 
   make_voter
+  acts_as_followable
 
   include Gravtastic
   gravtastic
   
   def to_s; email end
+  
+  def photo(type=:thumb)
+    gravatar_url(:size => 40)
+  end
 
 end
 # == Schema Information

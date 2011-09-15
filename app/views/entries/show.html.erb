@@ -1,3 +1,10 @@
+<div>
+	<%= link_to 'Back', entries_path %> |
+	<%= link_to 'Edit', edit_entry_path(@entry), :class => "#{'hidden' if cannot?(:update, @entry)}" %> |
+	<%= link_to 'Destroy', @entry, :confirm => 'Are you sure?', :method => :delete,
+							:class => "#{'hidden' if cannot?(:destroy, @entry)}" %>
+</div>
+
 <h3><%=title @entry.title %></h3>
 <div class="header">
 	<abbr class="timeago" title="<%= @entry.created_at(:to_db) %>"><%= @entry.created_at.to_s(:short) %></abbr>
@@ -32,12 +39,6 @@
   <% end %>
 </ul>
 
-
-<%= link_to 'Edit', edit_entry_path(@entry), :class => "#{'hidden' if cannot?(:update, @entry)}" %> |
-<%= link_to 'Destroy', @entry, :confirm => 'Are you sure?', :method => :delete,
-						:class => "#{'hidden' if cannot?(:destroy, @entry)}" %> |
-<%= link_to 'Back', entries_path %>
-
 <hr />
 
 <h5>Related Entries</h5>
@@ -49,6 +50,19 @@
 
 <h5>Comments</h5>
 <%= render 'shared/disqus/disqus' %>
+
+<% content_for :side do %>
+	<h5><%= @entry.user_followers.size %> Followers</h5>
+	<%=raw @entry.user_followers.map { |u| link_to(image_tag(u.photo(:thumb))) }.join(' ') %>
+	<div>
+		<% if current_user.try(:following?, @entry) %>
+			You're following this. 
+			[<%= link_to 'Unfollow', unfollow_entry_path(@entry), :method => :post %>]
+		<% else %>						
+			<%= link_to 'Follow This', follow_entry_path(@entry), :method => :post %>
+		<% end %>	
+	</div>	
+<% end %>
 
 <% content_for :javascript do %>
 	<%= render 'shared/disqus/comment_count' %>

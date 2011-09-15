@@ -7,7 +7,7 @@ class Ability
 
     user ||= User.new # guest user (not logged in)
 
-    can [:read, :create], Entry
+    can [:read, :create, :follow, :unfollow], Entry
     can [:update, :destroy], Entry, :user_id => user.id
     
     # Define abilities for the passed in user here. For example:

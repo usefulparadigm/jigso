@@ -9,6 +9,10 @@ Ultrabase::Application.routes.draw do
   resources :users
 
   resources :entries do
+    member do
+      post 'follow'
+      post 'unfollow'
+    end
     resources :photos, :only => [:create, :destroy]
     resources :votes, :only => [:create, :destroy]
   end  

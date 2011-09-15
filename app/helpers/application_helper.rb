@@ -1,5 +1,6 @@
 module ApplicationHelper
-
+  include ActsAsTaggableOn::TagsHelper
+  
   # Outputs all flash messages as an unordered list
   # Returns the HTML as a string or true if flash is empty
   # credit: https://github.com/brightbox/flashing-rails/blob/master/lib/flashing_rails.rb

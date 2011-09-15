@@ -35,6 +35,7 @@ GEM
     activesupport (3.0.10)
     acts-as-taggable-on (2.1.1)
       rails
+    acts_as_followable (0.1.9)
     addressable (2.2.6)
     annotate (2.4.0)
     arel (2.0.10)
@@ -215,6 +216,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on (~> 2.1.0)
+  acts_as_followable
   annotate
   auto_html
   cancan

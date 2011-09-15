@@ -25,6 +25,7 @@ Ultrabase is a skeleton framework for building brand-new website based on Ruby o
 - [high_voltage](https://github.com/thoughtbot/high_voltage) for static pages
 - [redcarpet](https://github.com/tanoku/redcarpet) for markdown handling
 - [omniauth]() for 3rd party authentication
+- [acts_as_followable](https://github.com/xpepermint/acts_as_followable) for follow model support
 
 - [jQuery]() for frontend javascript processing
 - jQuery plugins
@@ -43,14 +44,13 @@ TBD.
 
 - uploding in heroku
 - activity stream (timeline)
-- controller refactoring
-- following/subscription
 - login form customizing
 - my page(dashboard)
-- atom feed
 - pagination styling with sass processing
 - omniauth
 - open api support
+- code refactoring
+- add geo location support
 
 
 ### DEMO

@@ -32,6 +32,7 @@ gem 'annotate' #, :git => 'git://github.com/ctran/annotate_models.git'
 gem 'make_voteable'
 # gem 'meta_where'
 gem 'acts-as-taggable-on', '~>2.1.0'
+gem 'acts_as_followable'
 
 # background job processing
 gem 'whenever', :require => false

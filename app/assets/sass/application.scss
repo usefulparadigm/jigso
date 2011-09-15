@@ -11,6 +11,9 @@ textarea {
 
 #header {
 	position: relative;
+	h1 {
+		margin-top: 10px;
+	}
 }
 
 #top_nav {
@@ -54,6 +57,12 @@ textarea {
 .notice a          { color: #514721; }
 .success a         { color: #264409; }
 .info a            { color: #205791; }
+
+// tag cloud
+.css1 { font-size: 1.0em; }
+.css2 { font-size: 1.2em; }
+.css3 { font-size: 1.4em; }
+.css4 { font-size: 1.6em; }
 
 
 // pagination
