@@ -6,6 +6,7 @@
 <head>
 <meta charset="utf-8">
 <%= display_meta_tags :site => "#{Settings.app.name}" %>
+<%= auto_discovery_link_tag :atom, "/feed" %>
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->

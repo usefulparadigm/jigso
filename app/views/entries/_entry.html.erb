@@ -5,7 +5,7 @@
 		<h5><%= link_to entry.title, entry %></h5>
     <p><%= strip_tags(entry.body_html).truncate(100) %></p>
 		<div class="comment_count">
-			<%= link_to entry.title, entry_path(entry, :anchor => 'disqus_thread') %>
+			<%= link_to "0 Comments", entry_path(entry, :anchor => 'disqus_thread') %>
 		</div>	
 	</div>	
 </li>

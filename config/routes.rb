@@ -1,8 +1,9 @@
 Ultrabase::Application.routes.draw do
 
-  resources :pages
-
   match '/auth/:provider/callback', :to => 'sessions#create'
+  match '/feed' => 'entries#index',
+        :as => :feed,
+        :defaults => { :format => 'atom' }
 
   devise_for :users
   resources :users
@@ -11,6 +12,8 @@ Ultrabase::Application.routes.draw do
     resources :photos, :only => [:create, :destroy]
     resources :votes, :only => [:create, :destroy]
   end  
+
+  resources :pages
   
   root :to => "entries#index"
 
