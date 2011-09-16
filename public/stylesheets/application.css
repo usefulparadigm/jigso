@@ -239,6 +239,8 @@ textarea {
     height: 80px; }
   .entry .content {
     margin-left: 95px; }
+    .entry .content > p {
+      margin-bottom: 0; }
   .entry .avatar {
     float: right;
     margin-left: 5px; }

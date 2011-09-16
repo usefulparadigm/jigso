@@ -5,7 +5,7 @@ Ultrabase is a skeleton framework for building brand-new website based on Ruby o
 
 ### Dependencies
 
-- [Ruby on Rails]() 3.0.10 ('cause I don't like the new pipeline!!)
+- Ruby on Rails 3.0.10 ('cause I don't like the new pipeline!!)
 - [devise](https://github.com/plataformatec/devise) for authentication
 - [jammit](http://documentcloud.github.com/jammit/) for asset packaging
 - [meta-tags](https://github.com/kpumuk/meta-tags) for Search Engine Optimization(SEO)
@@ -27,7 +27,7 @@ Ultrabase is a skeleton framework for building brand-new website based on Ruby o
 - [omniauth]() for 3rd party authentication
 - [acts_as_followable](https://github.com/xpepermint/acts_as_followable) for follow model support
 
-- [jQuery]() for frontend javascript processing
+- jQuery for frontend javascript processing
 - jQuery plugins
 	- [raty](http://www.wbotelhos.com/raty/) for star rating (not used yet)
 	- [timeago](http://timeago.yarp.com/) for pretty timestamp
@@ -51,6 +51,9 @@ TBD.
 - open api support
 - code refactoring
 - add geo location support
+- improve page layout
+- activity streams support
+
 
 
 ### DEMO

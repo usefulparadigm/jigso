@@ -22,4 +22,5 @@ guard 'pow' do
   watch('config/environment.rb')
   watch(%r{^config/environments/.*\.rb$})
   watch(%r{^config/initializers/.*\.rb$})
+  watch('config/settings.yml')
 end

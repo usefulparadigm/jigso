@@ -1,6 +1,6 @@
 app:
-  name: ultra:base
-  feed_title: "Ultrabase Feed Updates"
+  name: jigso
+  feed_title: "Zigso Feed Updates"
   
 default_per_page: 5
 ga_ID: UA-123456-1

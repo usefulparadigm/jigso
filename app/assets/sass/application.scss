@@ -33,7 +33,10 @@ textarea {
 	padding: 10px 0;
 //	border-bottom: 1px dashed silver;
 	.thumb { float: left; margin-right: 10px; width: 80px; height: 80px; }
-	.content { margin-left: 95px; }
+	.content { 
+		margin-left: 95px;
+		>p { margin-bottom: 0; } 
+	}
 	.avatar { float: right; margin-left: 5px; }
 	.comment_count a { font-size: 0.9em; color: gray; }
 }
