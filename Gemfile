@@ -37,13 +37,9 @@ gem 'acts_as_followable'
 # background job processing
 gem 'whenever', :require => false
 
-gem "compass"
-gem "compass-960-plugin", :require => 'ninesixty'
-
 group :development do
   gem 'mongrel'
-  # gem 'guard-sass'
-  # gem 'guard-compass'
+  gem 'guard-sass'
   gem 'guard-livereload'
   gem 'guard-pow'
   # gem 'rails-footnotes', '>= 3.7'
