@@ -1,6 +1,6 @@
 ## Jigso
 
-Jigso is a skeleton framework for building brand-new website based on Ruby on Rails web framework. You can clone this skeleton code and customize as your will.
+Jigso is a skeleton for building brand-new social network site based on Ruby on Rails web framework. You can clone this skeleton code and customize it as your wish.
 
 
 ### Dependencies
@@ -59,5 +59,5 @@ TBD.
 
 ### DEMO
 
-	- [http://jigso.heroku.com](http://jigso.heroku.com)
+- http://jigso.heroku.com
 
