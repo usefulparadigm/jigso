@@ -1,2 +1,8 @@
+@import "compass";
+@import "compass/reset";
+@import "960/grid";
+
+$ninesixty-columns: 16;
+
 @import "lib/pagination";
 

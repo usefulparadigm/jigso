@@ -1,13 +1,14 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
-guard 'sass', :input => 'app/assets/sass', :output => 'public/stylesheets'
+# guard 'sass', :input => 'app/assets/sass', :output => 'public/stylesheets'
 
 guard 'livereload' do
   watch(%r{app/.+\.(erb|haml|markdown)})
   watch(%r{app/helpers/.+\.rb})
   watch(%r{(public/|app/assets).+\.(css|js|html)})
-  watch(%r{(app/assets/.+\.css)\.s[ac]ss}) { |m| m[1] }
+  # watch(%r{(app/assets/.+\.css)\.s[ac]ss}) { |m| m[1] }
+  watch(%r{app/assets/sass/.+.s[ac]ss})
   watch(%r{(app/assets/.+\.js)\.coffee}) { |m| m[1] }
   watch(%r{config/locales/.+\.yml})
 end
@@ -23,3 +24,8 @@ guard 'pow' do
   watch(%r{^config/environments/.*\.rb$})
   watch(%r{^config/initializers/.*\.rb$})
 end
+
+
+# guard 'compass' do
+#   watch(%r{^app/assets/sass/.*\.s[ac]ss$})
+# end
