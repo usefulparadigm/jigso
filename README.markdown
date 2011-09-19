@@ -1,6 +1,6 @@
-## Ultrabase
+## Jigso
 
-Ultrabase is a skeleton framework for building brand-new website based on Ruby on Rails web framework. You can clone this skeleton code and customize as your will.
+Jigso is a skeleton framework for building brand-new website based on Ruby on Rails web framework. You can clone this skeleton code and customize as your will.
 
 
 ### Dependencies
@@ -34,6 +34,7 @@ Ultrabase is a skeleton framework for building brand-new website based on Ruby o
 
 - CSS styling
 	- [skeleton](http://www.getskeleton.com/) for frontend layout
+	- [inuitcss](http://csswizardry.com/inuitcss/) for css grid
 
 ### Installation & Setup
 
@@ -58,5 +59,5 @@ TBD.
 
 ### DEMO
 
-- [http://ultrabase.heroku.com](http://ultrabase.heroku.com)
+	- [http://jigso.heroku.com](http://jigso.heroku.com)
 

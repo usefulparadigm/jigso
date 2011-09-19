@@ -1,4 +1,4 @@
-Ultrabase::Application.routes.draw do
+Jigso::Application.routes.draw do
 
   match '/auth/:provider/callback', :to => 'sessions#create'
   match '/feed' => 'entries#index',

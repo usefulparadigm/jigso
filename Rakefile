@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Ultrabase::Application.load_tasks
+Jigso::Application.load_tasks

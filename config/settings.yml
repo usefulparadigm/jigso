@@ -1,6 +1,7 @@
 app:
-  name: jigso
-  feed_title: "Zigso Feed Updates"
+  title: Jigso
+  slogan: Social Networking Made Easy
+  feed_title: "Jigso Feed Updates"
   
 default_per_page: 5
 ga_ID: UA-123456-1

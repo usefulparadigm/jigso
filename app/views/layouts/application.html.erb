@@ -1,47 +1,35 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<%= display_meta_tags :site => "#{Settings.app.name}" %>
-<%= auto_discovery_link_tag :atom, "/feed" %>
-<!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link rel="shortcut icon" href="http://faviconist.com/icons/f980cdd217e03efb126be16a1edd77cd/favicon.ico" />
-<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-<!-- <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
-
+<%= display_meta_tags :site => "#{Settings.app.title}" %>
+<%= auto_discovery_link_tag :atom, "/feed" %>
 <%= include_stylesheets :all %>
+<link rel="shortcut icon" href="http://faviconist.com/icons/01f8d1585e34596b1207875089fb1447/favicon.ico" />
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <%= csrf_meta_tag %>
 </head>
 <body>
 
-	<div id="page" class="container">
-		<div id="header" class="sixteen columns">
+	<div id="page" class="wrapper">
+		<div id="header" class="grid-16">
 			<%= render 'layouts/top_nav' %>
-			<h1><%= Settings.app.name %></h1>
-			<!-- <h5>Version 0.1</h5> -->
-			<hr/>
+			<h1><%= link_to Settings.app.title, root_path, :id => 'logo' %></h1>
+			<h5 class="slogan"><%= Settings.app.slogan %></h5>
+			<hr />
 		</div>
-		<div id="main" class="sixteen columns">
-			<div class="row">
-				<div id="content" class="ten columns alpha">
-					<%= render 'layouts/flash', :flash => flash %>
-					<%= yield %>
-				</div>
-				<div id="side" class="six columns omega">
-					<%= yield :side %>
-					<%= render 'layouts/footer' %>
-				</div>		
-			</div>	
+		<div id="main" class="grids">
+			<div id="content" class="grid-10">
+				<%= render 'layouts/flash', :flash => flash %>
+				<%= yield %>
+			</div>
+			<div id="side" class="grid-6">
+				<%= yield :side %>
+				<%= render 'layouts/footer' %>
+			</div>		
 		</div>
-	</div><!-- container -->
+	</div><!-- page -->
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script>window.jQuery || document.write("<script src='javascripts/jquery-1.6.2.min.js'>\x3C/script>")</script>

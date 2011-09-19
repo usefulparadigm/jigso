@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110915150101) do
+ActiveRecord::Schema.define(:version => 20110919030334) do
 
   create_table "attachments", :force => true do |t|
     t.text     "description"
@@ -46,6 +46,17 @@ ActiveRecord::Schema.define(:version => 20110915150101) do
 
   add_index "follows", ["followable_id", "followable_type"], :name => "fk_followables"
   add_index "follows", ["follower_id", "follower_type"], :name => "fk_follows"
+
+  create_table "items", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "image"
+    t.string   "key",         :limit => 20
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "items", ["key"], :name => "index_items_on_key"
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
