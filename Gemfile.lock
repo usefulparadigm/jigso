@@ -88,8 +88,6 @@ GEM
     jammit (0.6.3)
       yui-compressor (>= 0.9.3)
     json (1.6.0)
-    kaminari (0.12.4)
-      rails (>= 3.0.0)
     mail (2.2.19)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
@@ -199,6 +197,7 @@ GEM
     whenever (0.7.0)
       activesupport (>= 2.3.4)
       chronic (~> 0.6.3)
+    will_paginate (3.0.1)
     yui-compressor (0.9.6)
       POpen4 (>= 0.1.4)
 
@@ -222,7 +221,6 @@ DEPENDENCIES
   high_voltage
   inherited_resources
   jammit
-  kaminari
   make_voteable
   meta-tags
   mini_magick
@@ -234,3 +232,4 @@ DEPENDENCIES
   sqlite3
   transitions
   whenever
+  will_paginate (~> 3.0)

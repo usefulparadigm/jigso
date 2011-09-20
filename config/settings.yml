@@ -3,6 +3,6 @@ app:
   slogan: Social Networking Made Easy
   feed_title: "Jigso Feed Updates"
   
-default_per_page: 5
+default_per_page: 10
 ga_ID: UA-123456-1
 disqus_shortname: 'ultrabase'

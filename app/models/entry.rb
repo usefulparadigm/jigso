@@ -5,7 +5,6 @@ class Entry < ActiveRecord::Base
 
   belongs_to :user
 
-  # paginates_per 10
   make_voteable
   acts_as_taggable
   acts_as_followable
