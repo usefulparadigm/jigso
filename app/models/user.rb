@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
   has_many :entries #, :dependent => :destroy
+  has_many :recent_events, :as => :actor, :class_name => "TimelineEvent", :order => "timeline_events.created_at DESC"
 
   make_voter
   acts_as_followable

@@ -29,4 +29,10 @@ module ApplicationHelper
     html =~ /\<img.*?src="(.*?)"/ ? $1 : "/images/no_image_thumb.png"
   end
 
+  def render_timeline(events)
+    events.map do |event|
+      render("timeline_events/#{event.event_type}", :event => event)
+    end.join
+  end
+  
 end

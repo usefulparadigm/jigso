@@ -8,6 +8,7 @@ class Entry < ActiveRecord::Base
   make_voteable
   acts_as_taggable
   acts_as_followable
+
   self.per_page = 10
 
   include ActiveRecord::Transitions
@@ -29,7 +30,10 @@ class Entry < ActiveRecord::Base
   end
 
   def related_entries; find_related_tags end
-      
+
+  # activity streams  
+  fires :new_entry, :on => :create, :actor => :user
+
 end
 # == Schema Information
 #

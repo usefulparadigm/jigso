@@ -15,7 +15,7 @@ Jigso is a skeleton for building brand-new social network site based on Ruby on 
 - [nested_form](https://github.com/ryanb/nested_form) for nested form manipulation
 - [make_voteable](https://github.com/medihack/make_voteable) for voting
 - [auto_html](https://github.com/dejan/auto_html) for transforming URLs to appropriate resource
-- [kaminari](https://github.com/mislav/will_paginate) for pagination
+- [will_paginate](https://github.com/mislav/will_paginate) for pagination
 - [whenever](https://github.com/javan/whenever) for job scheduling
 - [rails_config](https://github.com/railsjedi/rails_config) for global app settings
 - [inherited_resources](https://github.com/josevalim/inherited_resources) for controller/resource abstraction
@@ -26,6 +26,7 @@ Jigso is a skeleton for building brand-new social network site based on Ruby on 
 - [redcarpet](https://github.com/tanoku/redcarpet) for markdown handling
 - [omniauth]() for 3rd party authentication
 - [acts_as_followable](https://github.com/xpepermint/acts_as_followable) for follow model support
+- [timeline_fu](https://github.com/jamesgolick/timeline_fu) for activity stream
 
 - jQuery for frontend javascript processing
 - jQuery plugins

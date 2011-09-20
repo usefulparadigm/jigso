@@ -1,5 +1,7 @@
 <h3><%=title "News Feed" %></h3>
 
+<%=raw render_timeline @recent_events %>
+
 <div class="header" style="text-align: right;">
 	<%= link_to 'New Entry', new_entry_path, :class => 'button' %>
 </div>

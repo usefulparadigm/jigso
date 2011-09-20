@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110919030334) do
+ActiveRecord::Schema.define(:version => 20110920073245) do
 
   create_table "attachments", :force => true do |t|
     t.text     "description"
@@ -73,6 +73,18 @@ ActiveRecord::Schema.define(:version => 20110919030334) do
 
   create_table "tags", :force => true do |t|
     t.string "name"
+  end
+
+  create_table "timeline_events", :force => true do |t|
+    t.string   "event_type"
+    t.string   "subject_type"
+    t.string   "actor_type"
+    t.string   "secondary_subject_type"
+    t.integer  "subject_id"
+    t.integer  "actor_id"
+    t.integer  "secondary_subject_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
