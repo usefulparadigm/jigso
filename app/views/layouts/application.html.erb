@@ -10,7 +10,7 @@
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <%= csrf_meta_tag %>
 </head>
-<body>
+<body class="container">
 
 	<div id="header" class="row">
 		<%= render 'layouts/top_nav' %>
@@ -18,11 +18,11 @@
 		<h5 class="slogan"><%= Settings.app.slogan %></h5>
 	</div>
 	<div id="main" class="row">
-		<div id="primary" class="column grid_8">
+		<div id="primary" class="column grid-8">
 			<%= render 'layouts/flash', :flash => flash %>
 			<%= yield %>
 		</div>
-		<div id="sub" class="column grid_4">
+		<div id="sub" class="column grid-4">
 			<%= yield :sub %>
 		</div>		
 	</div>

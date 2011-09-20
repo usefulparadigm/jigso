@@ -29,61 +29,62 @@ q:before, q:after {
 abbr, acronym {
   border: 0; }
 
-/* ================ */
-/* = The 1Kb Grid = */
-/* 12 columns, 60 pixels each, with 20 pixel gutter */
-/* ================ */
-.grid_1 {
+.grid-1 {
   width: 60px; }
 
-.grid_2 {
+.grid-2 {
   width: 140px; }
 
-.grid_3 {
+.grid-3 {
   width: 220px; }
 
-.grid_4 {
+.grid-4 {
   width: 300px; }
 
-.grid_5 {
+.grid-5 {
   width: 380px; }
 
-.grid_6 {
+.grid-6 {
   width: 460px; }
 
-.grid_7 {
+.grid-7 {
   width: 540px; }
 
-.grid_8 {
+.grid-8 {
   width: 620px; }
 
-.grid_9 {
+.grid-9 {
   width: 700px; }
 
-.grid_10 {
+.grid-10 {
   width: 780px; }
 
-.grid_11 {
+.grid-11 {
   width: 860px; }
 
-.grid_12 {
+.grid-12 {
   width: 940px; }
+
+.container {
+  width: 960px;
+  margin: 0 auto; }
+
+.row {
+  width: auto;
+  margin: 0 -10px; }
+
+.container > .row {
+  margin: 0; }
 
 .column {
   margin: 0 10px;
-  overflow: hidden;
-  float: left;
+  float: left; }
+
+.ie6 .column {
   display: inline; }
 
-.row {
-  width: 960px;
-  margin: 0 auto;
-  overflow: hidden; }
-
-.row .row {
-  margin: 0 -10px;
-  width: auto;
-  display: inline-block; }
+.box {
+  margin-bottom: 20px; }
 
 .digg_pagination {
   background: white;
@@ -229,14 +230,12 @@ textarea {
 
 #header {
   position: relative;
-  margin-top: 10px;
-  height: 50px;
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid silver; }
   #header h1 a {
     text-decoration: none;
-    padding-left: 60px;
+    padding-left: 45px;
     background: url(/images/logo.png) no-repeat left; }
   #header .slogan {
     display: none; }
@@ -277,6 +276,11 @@ textarea {
 
 .dropdown li {
   display: inline; }
+
+#sub h5 {
+  background-color: #277cc8;
+  color: #fff;
+  padding: 3px 10px; }
 
 /* Success, info, notice and error/alert boxes
 -------------------------------------------------------------- */
