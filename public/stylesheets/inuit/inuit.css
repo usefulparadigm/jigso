@@ -614,7 +614,7 @@ APPLY A CLASS OF .debug TO THE HTML ELEMENT ONLY WHEN YOUR SITE IS ON DEV
 Turn the grids back on. Idea given by @VictorPimentel
 */
 
-.debug		{ background:url(../img/css/baseline.gif) 0 18px #fff!important; }
+.debug		{ background:url(../images/css/baseline.gif) 0 18px #fff!important; }
 
 /*
 Red border == something is wrong
