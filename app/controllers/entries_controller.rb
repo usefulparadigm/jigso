@@ -6,7 +6,7 @@ class EntriesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @recent_events = current_user.recent_events.limit(10)
+    # @recent_events = current_user.recent_events.limit(10)
     @entries = Entry.order('created_at DESC')
     @entries = @entries.tagged_with(params[:tag]) if params[:tag]
     @entries = @entries.page(params[:page])
