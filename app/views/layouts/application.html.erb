@@ -12,23 +12,21 @@
 </head>
 <body>
 
-	<div id="page" class="container">
-		<div id="header" class="row">
-			<%= render 'layouts/top_nav' %>
-			<h1><%= link_to Settings.app.title, root_path %></h1>
-			<h5 class="slogan"><%= Settings.app.slogan %></h5>
+	<div id="header" class="row">
+		<%= render 'layouts/top_nav' %>
+		<h1><%= link_to Settings.app.title, root_path %></h1>
+		<h5 class="slogan"><%= Settings.app.slogan %></h5>
+	</div>
+	<div id="main" class="row">
+		<div id="primary" class="column grid_8">
+			<%= render 'layouts/flash', :flash => flash %>
+			<%= yield %>
 		</div>
-		<div id="main" class="row">
-			<div id="primary" class="column grid-8">
-				<%= render 'layouts/flash', :flash => flash %>
-				<%= yield %>
-			</div>
-			<div id="sub" class="column grid-4">
-				<%= yield :sub %>
-			</div>		
-		</div>
-		<%= render 'layouts/footer' %>
-	</div><!-- page -->	
+		<div id="sub" class="column grid_4">
+			<%= yield :sub %>
+		</div>		
+	</div>
+	<%= render 'layouts/footer' %>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script>window.jQuery || document.write("<script src='javascripts/jquery-1.6.2.min.js'>\x3C/script>")</script>
