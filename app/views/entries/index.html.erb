@@ -8,7 +8,9 @@
 	<%= render @entries %>
 </ul>
 
-<%= will_paginate @entries %>
+<div class="digg_pagination" style="float: right;">
+	<%= will_paginate @entries, :page_links => false %>
+</div>
 
 <% content_for :sub do %>
 <h5>Tags</h5>

@@ -8,6 +8,7 @@ class Entry < ActiveRecord::Base
   make_voteable
   acts_as_taggable
   acts_as_followable
+  self.per_page = 10
 
   include ActiveRecord::Transitions
 
