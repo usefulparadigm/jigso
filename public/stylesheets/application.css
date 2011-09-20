@@ -41,16 +41,16 @@
 
 .row {
   width: auto;
-  margin: 0 -10px; }
+  margin: 0 -10px;
+  overflow: hidden; }
 
 .container > .row {
   margin: 0; }
 
 .column {
   margin: 0 10px;
-  float: left; }
-
-.ie6 .column {
+  float: left;
+  overflow: hidden;
   display: inline; }
 
 .box {
