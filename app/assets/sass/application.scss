@@ -1,26 +1,29 @@
+// @import "reset";
 // @import "base";
 @import "grid";
 @import "pagination";
 
-html{
-	overflow-y:scroll; /* Force scrollbars 100% of the time */
-	font-size:100%; /* Use 16px as per http://www.informationarchitects.jp/en/100e2r/ and http://www.wilsonminer.com/posts/2008/oct/20/relative-readability/ */
-	font-family:Calibri, "Helvetica Neue", Arial, sans-serif; /* Swap these two lines around to switch between serif and sans */
-	// font-family:Cambria, Georgia, "Times New Roman", serif; /* Swap these two lines around to switch between serif and sans */
-	line-height:1.5;
-	background: #E0EFFA url(/images/bg_body.gif) repeat-x;
-	color:#333;
-}
+// html{
+// 	overflow-y:scroll; /* Force scrollbars 100% of the time */
+// 	font-size:100%; /* Use 16px as per http://www.informationarchitects.jp/en/100e2r/ and http://www.wilsonminer.com/posts/2008/oct/20/relative-readability/ */
+// 	font-family:Calibri, "Helvetica Neue", Arial, sans-serif; /* Swap these two lines around to switch between serif and sans */
+// 	// font-family:Cambria, Georgia, "Times New Roman", serif; /* Swap these two lines around to switch between serif and sans */
+// 	line-height:1.5;
+// 	color:#333;
+// }
 body{
-	min-height:100%;
-}
-body.container {
+	// min-height:100%;
 	margin-top: 20px;
+	background: #E0EFFA url(/images/bg_body.gif) repeat-x;
 }
 
-textarea {
-	width: 95%;
+#page {
+	background-color: #fff;
 }
+
+// textarea {
+// 	width: 95%;
+// }
 
 #header {
 	position: relative;

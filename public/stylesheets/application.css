@@ -36,7 +36,8 @@
 
 .container {
   width: 960px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  overflow: hidden; }
 
 .row {
   width: auto;
@@ -160,25 +161,12 @@
   .flickr_pagination .next_page {
     margin-left: 1em; }
 
-html {
-  overflow-y: scroll;
-  /* Force scrollbars 100% of the time */
-  font-size: 100%;
-  /* Use 16px as per http://www.informationarchitects.jp/en/100e2r/ and http://www.wilsonminer.com/posts/2008/oct/20/relative-readability/ */
-  font-family: Calibri, "Helvetica Neue", Arial, sans-serif;
-  /* Swap these two lines around to switch between serif and sans */
-  line-height: 1.5;
-  background: #e0effa url(/images/bg_body.gif) repeat-x;
-  color: #333; }
-
 body {
-  min-height: 100%; }
+  margin-top: 20px;
+  background: #e0effa url(/images/bg_body.gif) repeat-x; }
 
-body.container {
-  margin-top: 20px; }
-
-textarea {
-  width: 95%; }
+#page {
+  background-color: #fff; }
 
 #header {
   position: relative;
