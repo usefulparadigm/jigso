@@ -2,22 +2,22 @@
 
 <%#=raw render_timeline @recent_events %>
 
-<div class="header">
+<div class="header" style="text-align: right;">
 	<%= link_to 'New Entry', new_entry_path, :class => 'button' %>
 </div>
 
 <ul class="entries">
-	<%#= render @entries %>
+	<%= render @entries %>
 </ul>
 
-<!-- <div class="digg_pagination">
+<div class="digg_pagination" style="float: right;">
 	<%= will_paginate @entries, :page_links => false %>
-</div> -->
+</div>
 
 <% content_for :sub do %>
 <h5>Tags</h5>
 <% tag_cloud(Entry.tag_counts_on(:tags), %w(css1 css2 css3 css4)) do |tag, css_class| %>
-  <%#= link_to tag.name, entries_path(:tag => tag.name) , :class => css_class %>
+  <%= link_to tag.name, entries_path(:tag => tag.name) , :class => css_class %>
 <% end %>
 <% end %>
 
