@@ -641,6 +641,9 @@ html {
 body {
   min-height: 100%; }
 
+body.container {
+  margin-top: 20px; }
+
 textarea {
   width: 95%; }
 
