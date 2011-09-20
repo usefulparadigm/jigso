@@ -38,7 +38,6 @@ gem 'acts_as_followable'
 gem 'whenever', :require => false
 
 group :development do
-  gem 'mongrel'
   gem 'guard-sass'
   gem 'guard-livereload'
   gem 'guard-pow'

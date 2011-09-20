@@ -15,7 +15,7 @@ stylesheets:
     # - public/stylesheets/skeleton/base.css
     # - public/stylesheets/skeleton/skeleton.css
     # - public/stylesheets/skeleton/layout.css
-    - public/stylesheets/inuit/inuit.css
-    - public/stylesheets/inuit/grid.inuit.css
-    - public/stylesheets/inuit/dropdown.inuit.css
+    # - public/stylesheets/inuit/inuit.css
+    # - public/stylesheets/inuit/grid.inuit.css
+    # - public/stylesheets/inuit/dropdown.inuit.css
     - public/stylesheets/application.css

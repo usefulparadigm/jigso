@@ -4,6 +4,24 @@ textarea {
 	width: 95%;
 }
 
+// Layout
+
+body {
+	@include grid-container;
+	@include clearfix;
+}
+	
+#main {
+	@include clearfix;
+	#primary {
+	     @include grid(15);
+	     @include grid-suffix(1);
+	}
+	#side {
+	     @include grid(8);
+	}
+}
+
 #header {
 	position: relative;
 	margin-top: 10px;

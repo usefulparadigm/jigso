@@ -6,30 +6,28 @@
 <%= display_meta_tags :site => "#{Settings.app.title}" %>
 <%= auto_discovery_link_tag :atom, "/feed" %>
 <%= include_stylesheets :all %>
-<link rel="shortcut icon" href="http://faviconist.com/icons/01f8d1585e34596b1207875089fb1447/favicon.ico" />
+<link rel="shortcut icon" href="http://faviconist.com/icons/01f8d1585e34596b1207875089fb1447/favicon.ico">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <%= csrf_meta_tag %>
 </head>
 <body>
 
-	<div id="page" class="wrapper">
-		<div id="header" class="grid-16">
-			<%= render 'layouts/top_nav' %>
-			<h1><%= link_to Settings.app.title, root_path, :id => 'logo' %></h1>
-			<h5 class="slogan"><%= Settings.app.slogan %></h5>
-			<hr />
+	<div id="header">
+		<%= render 'layouts/top_nav' %>
+		<h1><%= link_to Settings.app.title, root_path, :id => 'logo' %></h1>
+		<h5 class="slogan"><%= Settings.app.slogan %></h5>
+		<hr />
+	</div>
+	<div id="main">
+		<div id="primary">
+			<%= render 'layouts/flash', :flash => flash %>
+			<%= yield %>
 		</div>
-		<div id="main" class="grids">
-			<div id="content" class="grid-10">
-				<%= render 'layouts/flash', :flash => flash %>
-				<%= yield %>
-			</div>
-			<div id="side" class="grid-6">
-				<%= yield :side %>
-				<%= render 'layouts/footer' %>
-			</div>		
-		</div>
-	</div><!-- page -->
+		<div id="sub">
+			<%= yield :sub %>
+		</div>		
+	</div>
+	<%= render 'layouts/footer' %>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script>window.jQuery || document.write("<script src='javascripts/jquery-1.6.2.min.js'>\x3C/script>")</script>
