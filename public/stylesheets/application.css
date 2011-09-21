@@ -647,7 +647,7 @@ textarea {
   position: relative;
   background-color: #4C94D8;
   height: 35px;
-  padding-top: 3px; }
+  margin-top: 5px; }
   #header .slogan {
     display: none; }
 
@@ -655,7 +655,7 @@ textarea {
   background: url(/images/logo_title.png) no-repeat;
   height: 30px;
   text-indent: -9999px;
-  margin: 0 0 0 10px; }
+  margin: 3px 0 0 10px; }
   #logo a {
     display: block;
     width: 99px;
