@@ -18,12 +18,14 @@
 		<h5 class="slogan"><%= Settings.app.slogan %></h5>
 	</div>
 	<div id="main" class="row">
-		<div id="sub" class="column grid-3">
-			<h5>Main</h5>
-			<%= yield :sub %>
+		<div class="column grid-3">
+			<div id="sub">
+				<h5>Main</h5>
+				<%= yield :sub %>
+			</div>	
 		</div>	
 		<div class="column grid-9">
-			<div id="primary" class="showgrid">
+			<div id="primary">
 				<%= render 'layouts/flash', :flash => flash %>
 				<%= yield %>
 			</div>

@@ -508,7 +508,7 @@ legend span {
 .row {
   width: auto;
   margin: 0 -10px;
-  overflow: hidden; }
+  /*overflow: hidden;*/ }
 
 .container > .row {
   margin: 0; }
@@ -640,6 +640,32 @@ html {
 body {
   min-height: 100%; }
 
+h1 {
+  font-size: 2em;
+  /* 32px */ }
+
+h2 {
+  font-size: 1.5em;
+  /* 24px */ }
+
+h3 {
+  font-size: 1.25em;
+  /* 20px */ }
+
+h4 {
+  font-size: 1.125em;
+  /* 18px */ }
+
+h5 {
+  font-weight: bold; }
+
+h5, h6 {
+  font-size: 1em;
+  /* 16px */ }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Calibri, "Helvetica Neue", Arial, sans-serif; }
+
 textarea {
   width: 95%; }
 
@@ -652,32 +678,51 @@ textarea {
     display: none; }
 
 #logo {
-  background: url(/images/logo_title.png) no-repeat;
+  background: url(/images/logo_title.png) no-repeat 20px 5px;
   height: 30px;
   text-indent: -9999px;
-  margin: 3px 0 0 10px; }
+  margin-top: 5px; }
   #logo a {
     display: block;
-    width: 99px;
+    width: 89px;
     height: 100%;
     overflow: hidden; }
 
 #top_nav {
   position: absolute;
-  top: 7px;
-  right: 10px;
+  top: 6px;
+  right: 20px;
   color: #fff; }
   #top_nav li {
     display: inline; }
   #top_nav a {
-    color: #fff; }
+    color: #fff;
+    text-decoration: none; }
+  #top_nav a.toggle {
+    padding-right: 15px;
+    background: url(/images/top_arrow.png) no-repeat right; }
+
+.dropdown {
+  background-color: #d0e6f5;
+  clear: both; }
+  .dropdown li a {
+    display: block;
+    border-top: solid 1px #DEDEDE;
+    padding: 4px;
+    text-decoration: none;
+    color: #999; }
+  .dropdown li a:hover {
+    color: #333; }
 
 #main {
-  margin-top: 10px;
+  margin-top: 20px;
   background: url(/images/bg_leftcol.gif) repeat-y 50px; }
 
 #primary {
   padding: 0 20px; }
+
+#sub {
+  padding-left: 10px; }
 
 .entries {
   margin: 0; }
@@ -766,3 +811,19 @@ textarea {
 
 .css4 {
   font-size: 1.6em; }
+
+ul#menu li {
+  display: inline;
+  position: relative; }
+
+ul#menu div {
+  display: none; }
+
+ul#menu li.mega div {
+  width: 18em;
+  position: absolute;
+  top: 1.6em;
+  left: 0em; }
+
+ul#menu li.hovering div {
+  display: block; }
