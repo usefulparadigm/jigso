@@ -4,7 +4,9 @@ Jigso::Application.routes.draw do
   match '/feed' => 'entries#index',
         :as => :feed,
         :defaults => { :format => 'atom' }
-
+        
+  match 'home' => 'entries#index'
+  
   devise_for :users
   resources :users
 
@@ -19,7 +21,7 @@ Jigso::Application.routes.draw do
 
   resources :pages
   
-  root :to => "entries#index"
+  root :to => "main#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

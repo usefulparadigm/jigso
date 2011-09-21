@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <%= display_meta_tags :site => "#{Settings.app.title}" %>
 <%= auto_discovery_link_tag :atom, "/feed" %>
 <%= include_stylesheets :all %>
@@ -10,33 +10,26 @@
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <%= csrf_meta_tag %>
 </head>
-<body>
-
-	<!-- Layout 2 -->
-	<div id="container" class="ez-mw">
-	  <div class="ez-box">
-			<%= render 'layouts/top_nav' %>
-			<h1><%= link_to Settings.app.title, root_path %></h1>
-			<h5 class="slogan"><%= Settings.app.slogan %></h5>
-	  </div>
-	    <!-- Module 2A -->
-	    <div class="ez-wr">
-	      <div class="ez-fl ez-negmr ez-66">
-	        <div class="ez-box">
-						<%= render 'layouts/flash', :flash => flash %>
-						<%= yield %>
-	        </div>
-	      </div>
-	      <div class="ez-last ez-oh">
-	        <div class="ez-box">
-						<%= yield :sub %>
-	        </div>
-	      </div>
-	    </div>
-	    <div class="ez-box">
-				<%#= render 'layouts/footer' %>
-	    </div>
+<body class="container">
+	
+	<div id="header" class="row">
+		<%= render 'layouts/top_nav' %>
+		<h1 id="logo"><%= link_to Settings.app.title, root_path %></h1>
+		<h5 class="slogan"><%= Settings.app.slogan %></h5>
 	</div>
+	<div id="main" class="row">
+		<div id="sub" class="column grid-3">
+			<h5>Main</h5>
+			<%= yield :sub %>
+		</div>	
+		<div class="column grid-9">
+			<div id="primary" class="showgrid">
+				<%= render 'layouts/flash', :flash => flash %>
+				<%= yield %>
+			</div>
+		</div>	
+	</div>
+	<%= render 'layouts/footer' %>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script>window.jQuery || document.write("<script src='javascripts/jquery-1.6.2.min.js'>\x3C/script>")</script>

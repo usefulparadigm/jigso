@@ -1,57 +1,63 @@
-@import "reset";
-// @import "base";
-// @import "grid";
-// @import "pagination";
+@import "base";
+@import "grid";
+@import "pagination";
 
 html{
-	overflow-y:scroll; /* Force scrollbars 100% of the time */
+	// overflow-y:scroll; /* Force scrollbars 100% of the time */
 	font-size:100%; /* Use 16px as per http://www.informationarchitects.jp/en/100e2r/ and http://www.wilsonminer.com/posts/2008/oct/20/relative-readability/ */
 	font-family:Calibri, "Helvetica Neue", Arial, sans-serif; /* Swap these two lines around to switch between serif and sans */
 	// font-family:Cambria, Georgia, "Times New Roman", serif; /* Swap these two lines around to switch between serif and sans */
 	line-height:1.5;
-	background: #E0EFFA url(/images/bg_body.gif) repeat-x;
+	background: #E0EFFA url(/images/bg_header.png) repeat-x;
 	color:#333;
 }
+
 body{
 	min-height:100%;
-	margin-top: 20px;
-	background: #E0EFFA url(/images/bg_body.gif) repeat-x;
 }
 
-#container {
-	width: 960px;
-	background-color: #fff;
+textarea {
+	width: 95%;
 }
-
-
-// textarea {
-// 	width: 95%;
-// }
 
 #header {
 	position: relative;
-	height: 40px;
-	padding: 10px;
-	
-	h1 {
-		font-size: 2em;
-		margin: 0; padding: 0;
-		line-height: 1;
-		a { 
-			text-decoration: none; 
-			padding-left: 45px;
-			background: url(/images/logo.png) no-repeat left;
-		}
-	}
+	background-color: #4C94D8;
+	height: 35px;
+	padding-top: 3px;
 	.slogan { display: none; }
+}
+
+#logo {
+	background: url(/images/logo_title.png) no-repeat;
+	height: 30px;
+	text-indent: -9999px;
+	margin: 0 0 0 10px;
+	a {
+		display: block;
+		width: 99px;
+		height: 100%;
+		overflow: hidden;
+	}
 }
 
 #top_nav {
 	position: absolute;
-	top: 5px; right: 10px; 
+	top: 7px; right: 10px; 
+	color: #fff;
 	li { 
 		display: inline; 
 	}
+	a { color: #fff; }
+}
+
+#main { 
+	margin-top: 10px; 
+	background: url(/images/bg_leftcol.gif) repeat-y 50px;
+}
+
+#primary { 
+	padding: 0 20px; 
 }
 
 // Entries
@@ -80,6 +86,7 @@ body{
 	background-color: #277cc8;
 	color: #fff;
 	padding: 3px 10px;
+	border-bottom: 1px solid white;
 }
 	
 
