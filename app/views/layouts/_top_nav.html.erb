@@ -1,15 +1,22 @@
 <div class="nav" id="top_nav">
 
 	<% if user_signed_in? %>
-		<%#= image_tag current_user.gravatar_url %>
-		<%= link_to current_user, '#', :class => 'toggle' %>
-    <ul class="menu dropdown" style="display: none;">
-      <li><%= link_to "Profile", edit_user_registration_path %></li>
-      <li><%= link_to "Settings", edit_user_registration_path %></li>
-      <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+		<ul>
+      <li><%= link_to "Home", home_path, :class => 'current' %></li>
+      <li><%= link_to "Items" %></li>
+      <li><%= link_to "Entries" %></li>
+			<li class="dropdown">
+				<%#= image_tag current_user.gravatar_url %>
+				<%= link_to current_user, '#', :class => 'toggle' %>
+		    <ul>
+		      <li><%= link_to "Profile", edit_user_registration_path %></li>
+		      <li><%= link_to "Settings", edit_user_registration_path %></li>
+		      <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+				</ul>	
+			</li>	
 		</ul>	
 	<% else %>
-		<ul class="menu">
+		<ul>
        <li><%= link_to "Sign up", new_user_registration_path %></li> 
        <li><%= link_to "Sign in", new_user_session_path %></li>
     </ul>

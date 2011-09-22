@@ -13,22 +13,18 @@
 <body class="container">
 	
 	<div id="header" class="row">
-		<%= render 'layouts/top_nav' %>
 		<h1 id="logo"><%= link_to Settings.app.title, root_path %></h1>
 		<h5 class="slogan"><%= Settings.app.slogan %></h5>
+		<%= render 'layouts/top_nav' %>
 	</div>
 	<div id="main" class="row">
-		<div class="column grid-3">
-			<div id="sub">
-				<h5>Main</h5>
-				<%= yield :sub %>
-			</div>	
+		<div id="sub" class="column">
+			<h5>Main</h5>
+			<%= yield :sub %>
 		</div>	
-		<div class="column grid-9">
-			<div id="primary">
-				<%= render 'layouts/flash', :flash => flash %>
-				<%= yield %>
-			</div>
+		<div id="primary" class="column">
+			<%= render 'layouts/flash', :flash => flash %>
+			<%= yield %>
 		</div>	
 	</div>
 	<%= render 'layouts/footer' %>

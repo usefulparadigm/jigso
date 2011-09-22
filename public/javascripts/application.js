@@ -7,8 +7,8 @@ $(function() {
 	$(".timeago").timeago();	
 
 	// dropdown
-	$('#top_nav > a').click(function() {
-		$(this).siblings('.dropdown').slideToggle();
+	$('.dropdown .toggle').click(function() {
+		$(this).toggleClass("active").next().slideToggle();
 	});
 
 });

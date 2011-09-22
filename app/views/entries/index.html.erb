@@ -1,10 +1,11 @@
+<div class="header" style="float: right;">
+	<%= link_to 'New Entry', new_entry_path, :class => 'button' %>
+</div>
+
 <h2 class="title"><%=title "News Feed" %></h2>
 
 <%#=raw render_timeline @recent_events %>
 
-<div class="header" style="text-align: right;">
-	<%= link_to 'New Entry', new_entry_path, :class => 'button' %>
-</div>
 
 <ul class="entries">
 	<%= render @entries %>

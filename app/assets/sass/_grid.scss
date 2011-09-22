@@ -1,21 +1,93 @@
 // http://heygrady.com/blog/2011/02/17/using-sass-with-the-1kb-grid-system/
 
-.grid-1 { width: 60px; }
-.grid-2 { width: 140px; }
-.grid-3 { width: 220px; }
-.grid-4 { width: 300px; }
-.grid-5 { width: 380px; }
-.grid-6 { width: 460px; }
-.grid-7 { width: 540px; }
-.grid-8 { width: 620px; }
-.grid-9 { width: 700px; }
-.grid-10 { width: 780px; }
-.grid-11 { width: 860px; }
-.grid-12 { width: 940px; }
+// .grid-1 { width: 60px; }
+// .grid-2 { width: 140px; }
+// .grid-3 { width: 220px; }
+// .grid-4 { width: 300px; }
+// .grid-5 { width: 380px; }
+// .grid-6 { width: 460px; }
+// .grid-7 { width: 540px; }
+// .grid-8 { width: 620px; }
+// .grid-9 { width: 700px; }
+// .grid-10 { width: 780px; }
+// .grid-11 { width: 860px; }
+// .grid-12 { width: 940px; }
+// 
+// .container { width: 960px; margin: 0 auto; }
+// .row { width: auto; margin: 0 -10px; /*overflow: hidden;*/ }
+// .container > .row { margin: 0; }
+// .column { margin: 0 10px; float: left; }
+// .ie6 .column { display: inline; }
+// .box { margin-bottom: 20px; }
 
-.container { width: 960px; margin: 0 auto; }
-.row { width: auto; margin: 0 -10px; /*overflow: hidden;*/ }
-.container > .row { margin: 0; }
-.column { margin: 0 10px; float: left; }
-.ie6 .column { display: inline; }
-.box { margin-bottom: 20px; }
+// @import "compass/utilities/general";
+
+// Configuration
+$column-width: 60px;
+$gutter-width: 20px;
+$columns: 12;
+
+// Column Widths
+@mixin grid($i) {
+   width: $column-width * $i + $gutter-width * ($i - 1);
+}
+@mixin grid-plus($i, $plus) {
+   width: $column-width * $i + $gutter-width * ($i - 1) + $plus;
+}
+@for $i from 1 through $columns {
+  .grid-#{$i} { @include grid($i); }
+}
+
+// Page, Row, Column
+@mixin grid-container($i: $columns) {
+  @extend .clearfix;
+   width: $column-width * $i + $gutter-width * $i;
+  margin: 0 auto;
+}
+@mixin grid-row($container: false) {
+  @extend .clearfix;
+  width: auto;
+  
+  // rows directly inside a container don't need the negative margin
+  @if $container {
+    margin: 0 0;
+  } @else {
+    margin: 0 (-$gutter-width / 2);
+    }
+}
+@mixin grid-column($i: false) {
+  margin: 0 ($gutter-width / 2);
+  float: left;
+  .ie6 & { display: inline; }
+  
+  @if $i {
+    @include grid($i);
+  }
+}
+@mixin grid-column-empty($i: 1, $position: after) {
+  $margin: $column-width * $i + $gutter-width * $i + ($gutter-width / 2);
+  
+  @if $position == after {
+    margin-right: $margin;
+  } @else {
+    margin-left: $margin;
+  }
+}
+
+.container {
+  @include grid-container;
+}
+.row {
+  @include grid-row;
+}
+.container > .row {
+  margin: 0;
+}
+.column {
+  @include grid-column;
+}
+
+// Box
+.box {
+  margin-bottom: $gutter-width;
+}
