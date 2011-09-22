@@ -24,6 +24,7 @@ gem 'auto_html'
 gem 'will_paginate', '~> 3.0'
 gem 'high_voltage'
 gem 'redcarpet'
+gem 'sitemap_generator'
 
 # gem 'fastercsv' # Only required on Ruby 1.8 and below
 # gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git', :branch => 'rails-3.0'

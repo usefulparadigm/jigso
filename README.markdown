@@ -27,6 +27,7 @@ Jigso is a skeleton for building brand-new social network site based on Ruby on 
 - [omniauth]() for 3rd party authentication
 - [acts_as_followable](https://github.com/xpepermint/acts_as_followable) for follow model support
 - [timeline_fu](https://github.com/jamesgolick/timeline_fu) for activity stream
+- [sitemap_generator](https://github.com/kjvarga/sitemap_generator) for sitemaps support
 
 - jQuery for frontend javascript processing
 - jQuery plugins
