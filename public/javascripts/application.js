@@ -8,7 +8,11 @@ $(function() {
 
 	// dropdown
 	$('.dropdown .toggle').click(function() {
-		$(this).toggleClass("active").next().slideToggle();
+		$(this).toggleClass("active").next().slideToggle("fast");
 	});
+
+	// button link
+	// <button class="link" data-href="url">Click</button>
+	$('button.link').live('click', function() { window.location.href = $(this).data('href'); });
 
 });

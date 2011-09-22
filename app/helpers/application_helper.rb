@@ -34,5 +34,5 @@ module ApplicationHelper
       render("timeline_events/#{event.event_type}", :event => event)
     end.join
   end
-  
+
 end

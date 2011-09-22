@@ -52,6 +52,9 @@ group :test do
   gem 'factory_girl'
 end
 
+group :production do
+  # gem 'mysql2'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'

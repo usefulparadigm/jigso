@@ -1,5 +1,6 @@
 <div class="header" style="float: right;">
-	<%= link_to 'New Entry', new_entry_path, :class => 'button' %>
+	<%#= button_tag "New Entry", :class => 'link cupid-green', :'data-href' => new_entry_path %>
+	<%= button_link_to "New Entry", new_entry_path, :class => 'cupid-green' %>
 </div>
 
 <h2 class="title"><%=title "News Feed" %></h2>
@@ -24,4 +25,6 @@
 
 <% content_for :javascript do %>
 	<%= render 'shared/disqus/comment_count' %>
+<script type="text/javascript" charset="utf-8">
+</script>
 <% end %>	
