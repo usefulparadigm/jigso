@@ -1585,12 +1585,12 @@ textarea {
 
 #logo {
   background: url(/images/logo_title.png) no-repeat 20px 5px;
-  height: 25px;
+  height: 26px;
   text-indent: -9999px;
   padding: 5px 0 0 20px; }
   #logo a {
     display: block;
-    width: 89px;
+    width: 90px;
     height: 100%;
     overflow: hidden; }
 
