@@ -41,7 +41,19 @@ Jigso is a skeleton for building brand-new social network site based on Ruby on 
 
 ### Installation & Setup
 
-TBD.
+Options 1. Clone this project.
+
+$ git clone git@github.com:usefulparadigm/jigso.git
+$ git init
+
+Options 2. Fork this project.
+
+$ git init
+$ git remote add jigso git@github.com:usefulparadigm/jigso.git
+$ git pull jigso master
+
+
+2. Enjoy!
 
 
 ### TODOs
