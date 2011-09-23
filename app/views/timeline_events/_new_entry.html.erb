@@ -1,1 +1,8 @@
-<li class="friended"><%= link_to(event.actor, user_url(event.actor)) %> added <%= link_to(event.subject, user_url(event.subject)) %> as a friend <%= event.created_at %></li>
+<li class="activity new_entry">
+	<%= link_to(event.actor, user_url(event.actor)) %>
+	created <%= link_to "New Entry", event.subject %>
+	<abbr class="timeago" title="<%= event.created_at(:to_db) %>"><%= event.created_at.to_s(:short) %></abbr>
+  <div class="body">
+		<%= strip_tags(event.subject.body_html).truncate(100) %>
+	</div>
+</li>

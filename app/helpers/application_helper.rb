@@ -25,14 +25,29 @@ module ApplicationHelper
     content_tag("ul", msgs.join("\n"), :id => css_id)
   end
 
+  # http://codefastdieyoung.com/2011/03/css-js-organization-best-practice/
+  def body_classes
+    [controller.controller_name].join
+  end
+
+  # using https://github.com/kpumuk/meta-tags
+  def page_title(title)
+    title(@page_title = title)
+  end
+
+  # def page_title(title)
+  #   content_tag :h2, title(title), :class => 'title'
+  # end
+
   def first_image(html)
     html =~ /\<img.*?src="(.*?)"/ ? $1 : "/images/no_image_thumb.png"
   end
 
   def render_timeline(events)
     events.map do |event|
-      render("timeline_events/#{event.event_type}", :event => event)
+      render("timeline_events/new_entry", :event => event)
     end.join
   end
+  
 
 end

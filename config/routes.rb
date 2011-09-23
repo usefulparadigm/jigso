@@ -5,7 +5,8 @@ Jigso::Application.routes.draw do
         :as => :feed,
         :defaults => { :format => 'atom' }
         
-  match 'home' => 'entries#index'
+  match 'home' => 'home#index'
+  match 'settings' => 'settings#index'
   
   devise_for :users
   resources :users
@@ -18,6 +19,7 @@ Jigso::Application.routes.draw do
     resources :photos, :only => [:create, :destroy]
     resources :votes, :only => [:create, :destroy]
   end  
+  resources :items
 
   resources :pages
   

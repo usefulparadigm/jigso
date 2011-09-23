@@ -1,4 +1,18 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2><%= page_title "Settings" %></h2>
+<!-- <h2>Edit <%= resource_name.to_s.humanize %></h2> -->
+
+<%= render 'settings/tabs', :active => 'account' %>
+
+
+<ul class="tabs-content">
+  <!-- Give ID that matches HREF of above anchors -->
+  <li class="active" id="news_feed">
+  </li>
+  <li id="account">
+	
+	</li>
+  <li id="mobileFriendly">The tabs work like a charm even on mobile devices.</li>
+</ul>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>

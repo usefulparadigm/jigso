@@ -2,7 +2,8 @@ class Entry < ActiveRecord::Base
   attr_accessible :title, :body, :attachments_attributes, :tag_list
   has_many   :attachments, :as => :attachable, :dependent => :destroy
   accepts_nested_attributes_for :attachments, :allow_destroy => true
-
+  default_scope order('created_at DESC')
+  
   belongs_to :user
 
   make_voteable

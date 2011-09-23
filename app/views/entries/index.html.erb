@@ -1,20 +1,14 @@
-<div class="header" style="float: right;">
-	<%#= button_tag "New Entry", :class => 'link cupid-green', :'data-href' => new_entry_path %>
-	<%= button_link_to "New Entry", new_entry_path, :class => 'cupid-green' %>
+<div class="header">
+	<%= button_link_to "New Entry", new_entry_path, :class => 'minimal' %>
 </div>
 
-<h2 class="title"><%=title "News Feed" %></h2>
+<h2><%=page_title "Recent Entries" %></h2>
 
-<%#=raw render_timeline @recent_events %>
-
-
-<ul class="entries">
+<ul id="recent_entries" class="entries">
 	<%= render @entries %>
 </ul>
 
-<div class="digg_pagination">
-	<%= will_paginate @entries, :page_links => false %>
-</div>
+<%= will_paginate @entries, :class => 'digg_pagination' %>
 
 <% content_for :sub do %>
 <h5>Tags</h5>

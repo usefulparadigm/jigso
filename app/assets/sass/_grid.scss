@@ -21,6 +21,8 @@
 // .box { margin-bottom: 20px; }
 
 // @import "compass/utilities/general";
+.clearfix { *zoom: 1; }
+.clearfix:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
 
 // Configuration
 $column-width: 60px;
@@ -86,6 +88,7 @@ $columns: 12;
 .column {
   @include grid-column;
 }
+
 
 // Box
 .box {

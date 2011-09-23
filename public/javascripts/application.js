@@ -5,11 +5,7 @@ $(function() {
 
 	$('.rating').raty({path: '/images/raty', start: 3});
 	$(".timeago").timeago();	
-
-	// dropdown
-	$('.dropdown .toggle').click(function() {
-		$(this).toggleClass("active").next().slideToggle("fast");
-	});
+	$("ul.sf-menu").superfish(); 
 
 	// button link
 	// <button class="link" data-href="url">Click</button>

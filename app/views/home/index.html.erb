@@ -1,0 +1,52 @@
+<div class="header">
+	<%= button_link_to "Add New Item", new_item_path, :class => 'minimal' %>
+</div>
+
+<h2><%= page_title "Home" %></h2>
+
+<div class="row">
+	<div class="column grid-6">
+
+		<ul class="tabs">
+		  <!-- Give href an ID value of corresponding "tabs-content" <li>'s -->
+		  <li><a class="active" href="#news_feed">News Feed</a></li>
+		  <li><a href="#lightweight">Recent Items</a></li>
+		  <li><a href="#mobileFriendly">Messages</a></li>
+		</ul>
+
+		<ul class="tabs-content">
+		  <!-- Give ID that matches HREF of above anchors -->
+		  <li class="active" id="news_feed">
+				<div>
+					<ul id="recent_activities">
+						<%=raw render_timeline @recent_activities %>
+					</ul>	
+				</div>	
+		  </li>
+		  <li id="lightweight">The tabs are cross-browser, but don't need a ton of hacky CSS or markup.</li>
+		  <li id="mobileFriendly">The tabs work like a charm even on mobile devices.</li>
+		</ul>
+
+	</div>
+	
+	<div class="column">
+		<h4>Recent Items</h4>
+	</div>	
+	
+</div>		
+
+
+
+
+<% content_for :sub do %>
+<h5>Tags</h5>
+<% tag_cloud(Entry.tag_counts_on(:tags), %w(css1 css2 css3 css4)) do |tag, css_class| %>
+  <%= link_to tag.name, entries_path(:tag => tag.name) , :class => css_class %>
+<% end %>
+<% end %>
+
+<% content_for :javascript do %>
+	<%= render 'shared/disqus/comment_count' %>
+<script type="text/javascript" charset="utf-8">
+</script>
+<% end %>	

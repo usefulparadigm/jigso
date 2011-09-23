@@ -465,6 +465,17 @@ legend span {
 .add-bottom {
   margin-bottom: 20px !important; }
 
+.clearfix, .container, .row, body {
+  *zoom: 1; }
+
+.clearfix:after, .container:after, .row:after, body:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden; }
+
 .grid-1 {
   width: 60px; }
 
@@ -1510,16 +1521,16 @@ button[disabled]:active {
   text-shadow: none; }
 
 html {
-  font-size: 100%;
-  /* Use 16px as per http://www.informationarchitects.jp/en/100e2r/ and http://www.wilsonminer.com/posts/2008/oct/20/relative-readability/ */
-  font-family: Calibri, "Helvetica Neue", Arial, sans-serif;
-  /* Swap these two lines around to switch between serif and sans */
-  line-height: 1.5;
+  overflow-y: scroll;
+  /* Force scrollbars 100% of the time */
+  font: 16px/1.5 Calibri, "Helvetica Neue", Arial, sans-serif;
   background: #e0effa url(/images/bg_header.png) repeat-x;
   color: #333; }
 
 body {
-  min-height: 100%; }
+  min-height: 100%;
+  width: auto;
+  margin: 0 0; }
 
 h1 {
   font-size: 2em;
@@ -1553,10 +1564,24 @@ textarea {
 #header {
   position: relative;
   background-color: #4C94D8;
-  height: 35px;
-  margin-top: 5px; }
+  margin-top: 5px;
+  height: 35px; }
   #header .slogan {
     display: none; }
+
+#main {
+  margin-top: 20px;
+  background: url(/images/bg_leftcol.gif) repeat-y 50px; }
+
+#primary {
+  width: 660px;
+  padding: 0 20px; }
+  #primary .header {
+    float: right; }
+
+#sub {
+  width: 210px;
+  padding-left: 10px; }
 
 #logo {
   background: url(/images/logo_title.png) no-repeat 20px 5px;
@@ -1574,51 +1599,29 @@ textarea {
   top: 6px;
   right: 20px;
   color: #fff; }
-  #top_nav ul > li {
-    display: inline; }
-  #top_nav ul > li.dropdown {
-    margin-left: 50px; }
-  #top_nav a {
+  #top_nav > div a {
     color: #fff;
     text-decoration: none;
-    padding: 10px; }
-  #top_nav a:hover {
-    background-color: #d0e6f5;
-    color: blue; }
-  #top_nav a.toggle {
-    padding-right: 15px;
-    background: url(/images/arrow_down.png) no-repeat right; }
-  #top_nav a.toggle.active {
-    background-image: url(/images/arrow_up.png); }
+    padding: 0 10px; }
+  #top_nav > ul > li {
+    display: inline; }
 
-.dropdown {
-  position: relative; }
-  .dropdown ul {
-    position: absolute;
-    top: 23px;
-    right: 0px;
-    background-color: #4C94D8;
-    width: 150px; }
-    .dropdown ul li a {
-      display: block;
-      border-top: solid 1px #fff;
-      text-decoration: none; }
+.activity {
+  padding-left: 20px;
+  background: url(/images/check.png) no-repeat left 5px; }
+  .activity .body {
+    background-color: #eee;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0 10px; }
 
-#main {
-  margin-top: 20px;
-  overflow: hidden;
-  background: url(/images/bg_leftcol.gif) repeat-y 50px; }
-
-#primary {
-  width: 660px;
-  padding: 0 20px; }
-
-#sub {
-  width: 210px;
-  padding-left: 10px; }
-
-.entries {
-  margin: 0; }
+#recent_activities {
+  margin: 10px; }
 
 .entry {
   overflow: auto;
@@ -1645,7 +1648,7 @@ textarea {
   display: inline; }
 
 #sub h5 {
-  background-color: #277cc8;
+  background-color: gray;
   color: #fff;
   padding: 3px 10px;
   border-bottom: 1px solid white; }
@@ -1704,19 +1707,3 @@ textarea {
 
 .css4 {
   font-size: 1.6em; }
-
-ul#menu li {
-  display: inline;
-  position: relative; }
-
-ul#menu div {
-  display: none; }
-
-ul#menu li.mega div {
-  width: 18em;
-  position: absolute;
-  top: 1.6em;
-  left: 0em; }
-
-ul#menu li.hovering div {
-  display: block; }
