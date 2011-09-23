@@ -6,4 +6,4 @@ app:
   
 default_per_page: 10
 ga_ID: UA-123456-1
-disqus_shortname: 'ultrabase'
+disqus_shortname: jigso
