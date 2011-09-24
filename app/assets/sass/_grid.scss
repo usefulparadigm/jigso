@@ -24,6 +24,7 @@
 .clearfix { *zoom: 1; }
 .clearfix:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
 
+
 // Configuration
 $column-width: 60px;
 $gutter-width: 20px;
@@ -89,8 +90,16 @@ $columns: 12;
   @include grid-column;
 }
 
-
 // Box
 .box {
   margin-bottom: $gutter-width;
 }
+
+// http://www.vcarrer.com/2009/06/1-line-css-grid-framework.html
+// .dp50 {width: 50%;  float:left;  display: inline;  *margin-right:-1px; }
+@mixin dp($p: 50%) {
+	width: $p; float:left;  display: inline;  *margin-right:-1px;
+}
+.dp50 { @include dp; }
+.dp66 { @include dp(66%); }
+

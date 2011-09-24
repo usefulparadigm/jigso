@@ -1,4 +1,6 @@
 @import "base";
+// @import "reset";
+// @import "html5";
 @import "grid";
 @import "pagination";
 @import "buttons";
@@ -8,7 +10,7 @@
 
 html{
 	overflow-y: scroll; /* Force scrollbars 100% of the time */
-	font: 16px/1.5 Calibri, "Helvetica Neue", Arial, sans-serif;
+	font: 16px/1.5 "Helvetica Neue", Arial, sans-serif;
 	background: #E0EFFA url(/images/bg_header.png) repeat-x;
 	color:#333;
 }
@@ -32,9 +34,8 @@ textarea {
 	width: 95%;
 }
 
-
-// =====
 // Layout 
+// ------------------------------
 
 #header {
 	position: relative;
@@ -47,17 +48,16 @@ textarea {
 #main { 
 	margin-top: 20px; 
 	background: url(/images/bg_leftcol.gif) repeat-y 50px;
+	padding: 0 10px;
 }
 
 #primary { 
-	@include grid-plus(9, -40px);
-	padding: 0 20px; 
+	@include grid-plus(9, -10px);
 	.header { float: right; }
 }
 
 #sub {
 	@include grid-plus(3, -10px);
-	padding-left: 10px;
 }
 
 #logo {
@@ -169,9 +169,9 @@ textarea {
 .info a            { color: #205791; }
 
 // tag cloud
-.css1 { font-size: 1.0em; }
-.css2 { font-size: 1.2em; }
-.css3 { font-size: 1.4em; }
-.css4 { font-size: 1.6em; }
+// .css1 { font-size: 1.0em; }
+// .css2 { font-size: 1.2em; }
+// .css3 { font-size: 1.4em; }
+// .css4 { font-size: 1.6em; }
 
 

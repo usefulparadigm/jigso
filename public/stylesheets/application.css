@@ -532,6 +532,18 @@ legend span {
 .box {
   margin-bottom: 20px; }
 
+.dp50 {
+  width: 50%;
+  float: left;
+  display: inline;
+  *margin-right: -1px; }
+
+.dp66 {
+  width: 66%;
+  float: left;
+  display: inline;
+  *margin-right: -1px; }
+
 .digg_pagination {
   background: white;
   cursor: default;
@@ -1523,7 +1535,7 @@ button[disabled]:active {
 html {
   overflow-y: scroll;
   /* Force scrollbars 100% of the time */
-  font: 16px/1.5 Calibri, "Helvetica Neue", Arial, sans-serif;
+  font: 16px/1.5 "Helvetica Neue", Arial, sans-serif;
   background: #e0effa url(/images/bg_header.png) repeat-x;
   color: #333; }
 
@@ -1571,17 +1583,16 @@ textarea {
 
 #main {
   margin-top: 20px;
-  background: url(/images/bg_leftcol.gif) repeat-y 50px; }
+  background: url(/images/bg_leftcol.gif) repeat-y 50px;
+  padding: 0 10px; }
 
 #primary {
-  width: 660px;
-  padding: 0 20px; }
+  width: 690px; }
   #primary .header {
     float: right; }
 
 #sub {
-  width: 210px;
-  padding-left: 10px; }
+  width: 210px; }
 
 #logo {
   background: url(/images/logo_title.png) no-repeat 20px 5px;
@@ -1695,15 +1706,3 @@ textarea {
 
 .info a {
   color: #205791; }
-
-.css1 {
-  font-size: 1.0em; }
-
-.css2 {
-  font-size: 1.2em; }
-
-.css3 {
-  font-size: 1.4em; }
-
-.css4 {
-  font-size: 1.6em; }
