@@ -1,14 +1,10 @@
-// @import "base";
-// @import "reset";
-@import "html5";
-@import "base/grid";
-@import "base/tabs";
-@import "base/form";
-@import "base/pagination";
-@import "base/buttons";
+@import "base";
+@import "grid";
+@import "pagination";
+@import "buttons";
 
 // =====
-// Override base style
+// Overriding base style
 
 body {
 	font: 14px/1.5 "Helvetica Neue", Arial, sans-serif;
@@ -16,31 +12,27 @@ body {
 	color:#333;
 }
 
-ul { margin: 0; padding: 0; list-style: none; }
-
-// h1 { font-size:2em;			/* 32px */ }
-// h2 { font-size:1.5em;		/* 24px */ }
-// h3 { font-size:1.25em;		/* 20px */ }
-// h4 { font-size:1.125em;		/* 18px */ }
-// h5 { font-weight:bold; }
-// h5, h6 { font-size:1em;			/* 16px */ }
-// h1, h2, h3, h4, h5, h6 {
-// 	font-family:Calibri, "Helvetica Neue", Arial, sans-serif; 
-// }
+h1 { font-size:2em;			/* 32px */ }
+h2 { font-size:1.5em;		/* 24px */ }
+h3 { font-size:1.25em;		/* 20px */ }
+h4 { font-size:1.125em;		/* 18px */ }
+h5 { font-weight:bold; }
+h5, h6 { font-size:1em;			/* 16px */ }
+h1, h2, h3, h4, h5, h6 {
+	font-family:Calibri, "Helvetica Neue", Arial, sans-serif; 
+}
 
 textarea {
 	width: 95%;
 }
 
+
 // Layout 
 // ------------------------------
 
-#container { 
-	@include grid-container; 
-}
-header, #main, footer { @include grid-row(true); }
+#header, #main, #footer { @include grid-row(true); }
 
-header {
+#header {
 	position: relative;
 	background-color: #4C94D8;
 	margin-top: 5px;
@@ -54,13 +46,11 @@ header {
 }
 
 #primary { 
-	// @include grid-column(9);
 	@include grid-plus(9, -10px);
 	.header { float: right; }
 }
 
 #sub {
-	// @include grid-column(3);
 	@include grid-plus(3, -10px);
 }
 
@@ -86,7 +76,7 @@ header {
 	> ul > li { display: inline; }
 }
 
-footer {
+#footer {
 	background-color: #444;
 	color: #ddd;
 	a { color: #ddd; }
@@ -94,7 +84,10 @@ footer {
 	text-align: right;
 }
 
+
 // Activities (Timeline)
+// ------------------------------
+
 .activity {
 	padding-left: 20px;
 	background: url(/images/check.png) no-repeat left 5px;
@@ -113,6 +106,7 @@ footer {
 
 
 // Entries
+// ------------------------------
 
 .entry {
 	overflow: auto; width: 100%;
