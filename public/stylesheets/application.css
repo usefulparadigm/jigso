@@ -1532,10 +1532,15 @@ button[disabled]:active {
   cursor: not-allowed;
   text-shadow: none; }
 
+html {
+  overflow-y: scroll;
+  /* Force scrollbars 100% of the time */ }
+
 body {
   font: 14px/1.5 "Helvetica Neue", Arial, sans-serif;
+  color: #333;
   background: #e0effa url(/images/bg_header.png) repeat-x;
-  color: #333; }
+  min-height: 100%; }
 
 h1 {
   font-size: 2em;
@@ -1591,11 +1596,11 @@ textarea {
   width: 210px; }
 
 #logo {
-  background: url(/images/logo_title.png) no-repeat 10px 5px;
+  background: url(/images/logo_title.png) no-repeat 10px 4px;
   height: 26px;
   text-indent: -9999px;
   margin: 0;
-  padding: 5px 0 0 10px; }
+  padding: 4px 0 0 10px; }
   #logo a {
     display: block;
     width: 90px;
@@ -1604,7 +1609,7 @@ textarea {
 
 #top_nav {
   position: absolute;
-  top: 10px;
+  top: 5px;
   right: 10px;
   color: #fff; }
   #top_nav > div a {
@@ -1615,12 +1620,14 @@ textarea {
     display: inline; }
 
 #footer {
+  font-size: 0.9em;
   background-color: #444;
   color: #ddd;
-  padding: 10px 10px;
-  text-align: right; }
+  padding: 10px 10px; }
   #footer a {
     color: #ddd; }
+  #footer .jigso {
+    float: right; }
 
 .activity {
   padding-left: 20px;

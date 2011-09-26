@@ -1,15 +1,20 @@
 @import "base";
-@import "grid";
-@import "pagination";
-@import "buttons";
+@import "base/grid";
+@import "base/pagination";
+@import "base/buttons";
 
 // =====
 // Overriding base style
 
+html {
+	overflow-y:scroll; /* Force scrollbars 100% of the time */
+}
+
 body {
 	font: 14px/1.5 "Helvetica Neue", Arial, sans-serif;
-	background: #E0EFFA url(/images/bg_header.png) repeat-x;
 	color:#333;
+	background: #E0EFFA url(/images/bg_header.png) repeat-x;
+	min-height: 100%;
 }
 
 h1 { font-size:2em;			/* 32px */ }
@@ -55,11 +60,11 @@ textarea {
 }
 
 #logo {
-	background: url(/images/logo_title.png) no-repeat 10px 5px;
+	background: url(/images/logo_title.png) no-repeat 10px 4px;
 	height: 26px;
 	text-indent: -9999px;
 	margin: 0;
-	padding: 5px 0 0 10px;
+	padding: 4px 0 0 10px;
 	a {
 		display: block;
 		width: 90px;
@@ -70,18 +75,19 @@ textarea {
 
 #top_nav {
 	position: absolute;
-	top: 10px; right: 10px; 
+	top: 5px; right: 10px; 
 	color: #fff;
 	> div a { color: #fff; text-decoration: none; padding: 0 5px; }
 	> ul > li { display: inline; }
 }
 
 #footer {
+	font-size: 0.9em;
 	background-color: #444;
 	color: #ddd;
 	a { color: #ddd; }
 	padding: 10px 10px;
-	text-align: right;
+	.jigso { float: right; }
 }
 
 
