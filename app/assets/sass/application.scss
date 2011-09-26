@@ -1,34 +1,32 @@
-@import "base";
+// @import "base";
 // @import "reset";
-// @import "html5";
-@import "grid";
-@import "pagination";
-@import "buttons";
+@import "html5";
+@import "base/grid";
+@import "base/tabs";
+@import "base/form";
+@import "base/pagination";
+@import "base/buttons";
 
 // =====
 // Override base style
 
-html{
-	overflow-y: scroll; /* Force scrollbars 100% of the time */
-	font: 16px/1.5 "Helvetica Neue", Arial, sans-serif;
+body {
+	font: 14px/1.5 "Helvetica Neue", Arial, sans-serif;
 	background: #E0EFFA url(/images/bg_header.png) repeat-x;
 	color:#333;
 }
 
-body{
-	min-height:100%;
-	@include grid-row(true);
-}
+ul { margin: 0; padding: 0; list-style: none; }
 
-h1 { font-size:2em;			/* 32px */ }
-h2 { font-size:1.5em;		/* 24px */ }
-h3 { font-size:1.25em;		/* 20px */ }
-h4 { font-size:1.125em;		/* 18px */ }
-h5 { font-weight:bold; }
-h5, h6 { font-size:1em;			/* 16px */ }
-h1, h2, h3, h4, h5, h6 {
-	font-family:Calibri, "Helvetica Neue", Arial, sans-serif; 
-}
+// h1 { font-size:2em;			/* 32px */ }
+// h2 { font-size:1.5em;		/* 24px */ }
+// h3 { font-size:1.25em;		/* 20px */ }
+// h4 { font-size:1.125em;		/* 18px */ }
+// h5 { font-weight:bold; }
+// h5, h6 { font-size:1em;			/* 16px */ }
+// h1, h2, h3, h4, h5, h6 {
+// 	font-family:Calibri, "Helvetica Neue", Arial, sans-serif; 
+// }
 
 textarea {
 	width: 95%;
@@ -37,7 +35,12 @@ textarea {
 // Layout 
 // ------------------------------
 
-#header {
+#container { 
+	@include grid-container; 
+}
+header, #main, footer { @include grid-row(true); }
+
+header {
 	position: relative;
 	background-color: #4C94D8;
 	margin-top: 5px;
@@ -46,25 +49,27 @@ textarea {
 }
 
 #main { 
-	margin-top: 20px; 
-	background: url(/images/bg_leftcol.gif) repeat-y 50px;
-	padding: 0 10px;
+	background: #fff url(/images/bg_leftcol.gif) repeat-y 50px;
+	padding: 20px 10px;
 }
 
 #primary { 
+	// @include grid-column(9);
 	@include grid-plus(9, -10px);
 	.header { float: right; }
 }
 
 #sub {
+	// @include grid-column(3);
 	@include grid-plus(3, -10px);
 }
 
 #logo {
-	background: url(/images/logo_title.png) no-repeat 20px 5px;
+	background: url(/images/logo_title.png) no-repeat 10px 5px;
 	height: 26px;
 	text-indent: -9999px;
-	padding: 5px 0 0 20px;
+	margin: 0;
+	padding: 5px 0 0 10px;
 	a {
 		display: block;
 		width: 90px;
@@ -75,32 +80,18 @@ textarea {
 
 #top_nav {
 	position: absolute;
-	top: 6px; right: 20px; 
+	top: 10px; right: 10px; 
 	color: #fff;
-	> div a { color: #fff; text-decoration: none; padding: 0 10px; }
+	> div a { color: #fff; text-decoration: none; padding: 0 5px; }
 	> ul > li { display: inline; }
-	// background-color: #d0e6f5;
-	// ul {
-	// 	> li { display: inline; }
-	// 	> li.dropdown { margin-left: 50px; }
-	// }
-	// a { 
-	// 	color: #fff;
-	// 	text-decoration: none; 
-	// 	padding: 10px;
-	// }
-	// a:hover {
-	// 	background-color: #d0e6f5;
-	// 	color: blue;
-	// }
+}
 
-	// a.toggle {
-	// 	padding-right: 15px;
-	// 	background: url(/images/arrow_down.png) no-repeat right;
-	// }
-	// a.toggle.active {
-	// 	background-image: url(/images/arrow_up.png);
-	// }
+footer {
+	background-color: #444;
+	color: #ddd;
+	a { color: #ddd; }
+	padding: 10px 10px;
+	text-align: right;
 }
 
 // Activities (Timeline)
