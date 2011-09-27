@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110927070651) do
+ActiveRecord::Schema.define(:version => 20110927043343) do
 
   create_table "attachments", :force => true do |t|
     t.text     "description"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(:version => 20110927070651) do
     t.string   "title"
     t.text     "description"
     t.string   "image_url"
-    t.string   "key",         :limit => 20
+    t.string   "key"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(:version => 20110927070651) do
   create_table "user_items", :force => true do |t|
     t.integer  "user_id"
     t.integer  "item_id"
-    t.text     "description"
+    t.text     "note"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

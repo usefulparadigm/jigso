@@ -3,7 +3,7 @@ class CreateUserItems < ActiveRecord::Migration
     create_table :user_items do |t|
       t.references :user
       t.references :item
-      t.text :description
+      t.text :note
       t.timestamps
     end
   end

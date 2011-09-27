@@ -1710,10 +1710,10 @@ textarea {
 .item .thumb {
   float: left;
   margin: 10px;
-  width: 100px; }
+  width: 70px; }
 .item .content {
   float: right;
-  width: 80%; }
+  width: 85%; }
 
 /* Success, info, notice and error/alert boxes
 -------------------------------------------------------------- */

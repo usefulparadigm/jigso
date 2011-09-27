@@ -3,8 +3,8 @@ class CreateItems < ActiveRecord::Migration
     create_table :items do |t|
       t.string :title
       t.text :description
-      t.string :image
-      t.string :key, :limit => 20
+      t.string :image_url
+      t.string :key
 
       t.timestamps
     end
