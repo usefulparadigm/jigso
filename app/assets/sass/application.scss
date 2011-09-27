@@ -131,45 +131,29 @@ textarea {
 // Activities (Timeline)
 // ------------------------------
 
+.activities {
+	margin-left: 10px;
+}
+
 .activity {
 	padding-left: 20px;
 	background: url(/images/check.png) no-repeat left 5px;
-	.body {
-		background-color: #eee;
-		border: 1px solid #ddd;
-		@include border-radius(5px);
-		padding: 10px;
-		margin: 5px 0 10px;
-		
-	}
-}
-#recent_activities {
-	margin: 10px;
 }
 
 
-// Entries
+// Entries & Items
 // ------------------------------
 
-.entry {
-	overflow: auto; width: 100%;
+.entry, .item {
 	padding: 10px 0;
-//	border-bottom: 1px dashed silver;
-	.thumb { float: left; margin-right: 10px; width: 80px; height: 80px; }
+	.thumb { float: left; margin-right: 10px; width: 70px; }
 	.content { 
-		margin-left: 95px;
+		float: left;
+		width: 80%;
 		>p { margin-bottom: 0; } 
 	}
 	.avatar { float: right; margin-left: 5px; }
 	.comment_count a { font-size: 0.9em; color: gray; }
-}
-//.entry:first-child { border-top: 1px dashed silver; }
-
-// Items
-
-.item {
-	.thumb { float: left; margin: 10px; width: 70px; }
-	.content { float: right; width: 85%; }
 }
 
 

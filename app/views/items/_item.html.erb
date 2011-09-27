@@ -1,10 +1,10 @@
-<li class="item clearfix">
-	<%= image_tag(item.image, :class => 'thumb') %>
+<div class="item clearfix">
+	<%= link_to image_tag(item.image, :width => 70, :class => 'thumb'), item %>
 	<div class="content">
 		<h5><%= link_to item.title, item %></h5>
 		<%= link_to item.url, item.url %>
 		<p>
-			<%= item.description %>
+			<%= strip_tags(item.description).truncate(100) %>
 		</p>	
 	</div>	
-</li>	
+</div>	

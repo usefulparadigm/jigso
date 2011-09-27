@@ -1,11 +1,12 @@
-<li class="activity new_entry">
+<div class="activity new_entry">
 	<%= link_to(event.actor, user_url(event.actor)) %>
-	created a <%= link_to "New Entry", event.subject %>
+	created a <%= link_to "new entry", event.subject %>
 	<% if event.secondary_subject %>
-		about an <%= link_to 'Item', event.secondary_subject %>
+		about an <%= link_to 'item', event.secondary_subject %>
 	<% end %>
 	<abbr class="timeago" title="<%= event.created_at(:to_db) %>"><%= event.created_at.to_s(:short) %></abbr>
-  <div class="body">
+  <!-- <div class="body">
 		<%= strip_tags(event.subject.body_html).truncate(100) %>
-	</div>
-</li>
+	</div> -->
+	<%= render 'entries/entry', :entry => event.subject %>
+</div>

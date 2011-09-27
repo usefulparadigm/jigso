@@ -45,7 +45,7 @@ module ApplicationHelper
 
   def render_timeline(events)
     events.map do |event|
-      render("timeline_events/new_entry", :event => event)
+      render("timeline_events/#{event.event_type}", :event => event) # rescue nil
     end.join
   end
   

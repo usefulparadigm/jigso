@@ -9,14 +9,13 @@ class Item < ActiveRecord::Base
 
   def url; self.key end
   def url=(url); self.key = url end
-  # def to_s; url end
 
   def related_entries
     Entry.where(:item_id => self.key)
   end
   
   def image
-    image_url || Settings.item.default_image
+    image_url.blank? ? Settings.item.default_image : image_url
   end
 
 end

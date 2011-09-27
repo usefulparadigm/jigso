@@ -1,6 +1,6 @@
 <div class="header">
 	<h2><%= page_title "Home" %></h2>
-	<%= button_link_to "Add New Item", new_item_path, :class => 'minimal' %>
+	<%#= button_link_to "Add New Item", new_item_path, :class => 'cupid-green' %>
 </div>
 
 <div class="row">
@@ -8,17 +8,16 @@
 
 		<ul class="tabs">
 		  <!-- Give href an ID value of corresponding "tabs-content" <li>'s -->
-		  <li><a class="active" href="#news_feed">News Feed</a></li>
-		  <li><a href="#lightweight">Recent Items</a></li>
-		  <li><a href="#mobileFriendly">Messages</a></li>
+		  <li><a class="active" href="#news_feed">Recent Activities</a></li>
+		  <li><a href="#messages">Messages</a></li>
 		</ul>
 
 		<ul class="tabs-content">
 		  <!-- Give ID that matches HREF of above anchors -->
 		  <li class="active" id="news_feed">
 				<div>
-					<ul id="recent_activities">
-						<%=raw render_timeline @recent_activities %>
+					<ul class="activities">
+						<%=raw render_timeline @activities %>
 					</ul>	
 				</div>	
 		  </li>
@@ -30,11 +29,6 @@
 	
 	<div class="column">
 		<h4>Recent Items</h4>
-		<ul class="items">
-			<% @items.each do |item| %>
-				<li class="item"><%= link_to image_tag(item.image, :class => 'thumb'), item %></li>
-			<% end %>	
-		</ul>	
 	</div>	
 	
 </div>		

@@ -1670,50 +1670,30 @@ textarea {
     top: 0;
     right: 10px; }
 
+.activities {
+  margin-left: 10px; }
+
 .activity {
   padding-left: 20px;
   background: url(/images/check.png) no-repeat left 5px; }
-  .activity .body {
-    background-color: #eee;
-    border: 1px solid #ddd;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 5px 0 10px; }
 
-#recent_activities {
-  margin: 10px; }
-
-.entry {
-  overflow: auto;
-  width: 100%;
+.entry, .item {
   padding: 10px 0; }
-  .entry .thumb {
+  .entry .thumb, .item .thumb {
     float: left;
     margin-right: 10px;
-    width: 80px;
-    height: 80px; }
-  .entry .content {
-    margin-left: 95px; }
-    .entry .content > p {
+    width: 70px; }
+  .entry .content, .item .content {
+    float: left;
+    width: 80%; }
+    .entry .content > p, .item .content > p {
       margin-bottom: 0; }
-  .entry .avatar {
+  .entry .avatar, .item .avatar {
     float: right;
     margin-left: 5px; }
-  .entry .comment_count a {
+  .entry .comment_count a, .item .comment_count a {
     font-size: 0.9em;
     color: gray; }
-
-.item .thumb {
-  float: left;
-  margin: 10px;
-  width: 70px; }
-.item .content {
-  float: right;
-  width: 85%; }
 
 /* Success, info, notice and error/alert boxes
 -------------------------------------------------------------- */

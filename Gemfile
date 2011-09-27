@@ -48,7 +48,7 @@ group :development do
   gem 'guard-sass'
   gem 'guard-livereload'
   gem 'guard-pow'
-  # gem 'rails-footnotes', '>= 3.7'
+  # gem 'rails-footnotes', '>= 3.7.5.rc4'
 end
 
 group :test do
