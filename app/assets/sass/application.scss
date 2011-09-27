@@ -7,12 +7,12 @@
 // Overriding base style
 
 html {
-	overflow-y:scroll; /* Force scrollbars 100% of the time */
+	overflow-y: scroll; /* Force scrollbars 100% of the time */
 }
 
 body {
 	font: 14px/1.5 "Helvetica Neue", Arial, sans-serif;
-	color:#333;
+	color: #333;
 	background: #E0EFFA url(/images/bg_header.png) repeat-x;
 	min-height: 100%;
 }
@@ -27,10 +27,12 @@ h1, h2, h3, h4, h5, h6 {
 	font-family:Calibri, "Helvetica Neue", Arial, sans-serif; 
 }
 
+a, a:visited { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
 textarea {
 	width: 95%;
 }
-
 
 // Layout 
 // ------------------------------
@@ -48,11 +50,11 @@ textarea {
 #main { 
 	background: #fff url(/images/bg_leftcol.gif) repeat-y 50px;
 	padding: 20px 10px;
+	position: relative;
 }
 
 #primary { 
 	@include grid-plus(9, -10px);
-	.header { float: right; }
 }
 
 #sub {
@@ -76,20 +78,55 @@ textarea {
 #top_nav {
 	position: absolute;
 	top: 5px; right: 10px; 
-	color: #fff;
-	> div a { color: #fff; text-decoration: none; padding: 0 5px; }
-	> ul > li { display: inline; }
+	ul a:hover { text-decoration: none; }
+	> div {
+		a { padding: 0 10px; }
+		&, & > a, & > a:visited { color: #fff; }
+	}
+}
+
+.sf-menu {
+	margin: -4px -10px 0 0;
+	a { 
+		padding: 8px 10px; border: none;
+		&, &:visited { color: #cfdeff; }
+	}
+	a.sf-with-ul, a:visited, a:hover, li ul a, li ul a:visited { color: #1133AA; }
+	li { 
+		background-color: #4C94D8; 
+		&.current a, &.current a:visited { color: #fff; }
+	}
 }
 
 #footer {
 	font-size: 0.9em;
 	background-color: #444;
-	color: #ddd;
-	a { color: #ddd; }
+	&, & a { color: #ddd; }
 	padding: 10px 10px;
+	ul { 
+		float: left;
+		margin: 0; padding: 0;
+		li { 
+			display: inline; 
+			border-left: 1px solid gray; 
+			&:first-child { border-left: none; }
+			margin-left: 5px; padding-left: 10px;
+		}
+	}
 	.jigso { float: right; }
 }
 
+#sub h5 {
+	background-color: gray;
+	color: #fff;
+	padding: 3px 10px;
+	border-bottom: 1px solid white;
+}
+
+.header {
+	position: relative;
+	button { position: absolute; top: 0; right: 10px; }
+}
 
 // Activities (Timeline)
 // ------------------------------
@@ -116,7 +153,6 @@ textarea {
 
 .entry {
 	overflow: auto; width: 100%;
-	margin: 0;
 	padding: 10px 0;
 //	border-bottom: 1px dashed silver;
 	.thumb { float: left; margin-right: 10px; width: 80px; height: 80px; }
@@ -129,15 +165,10 @@ textarea {
 }
 //.entry:first-child { border-top: 1px dashed silver; }
 
-.dropdown li {
-	display: inline;
-}
-
-#sub h5 {
-	background-color: gray;
-	color: #fff;
-	padding: 3px 10px;
-	border-bottom: 1px solid white;
+// Items
+.item {
+	.thumb { float: left; margin: 10px; width: 100px; }
+	.content { float: right; width: 80%; }
 }
 
 

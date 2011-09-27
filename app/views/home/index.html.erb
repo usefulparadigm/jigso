@@ -1,5 +1,5 @@
 <div class="header">
-	<%= button_link_to "Add New Item", new_item_path, :class => 'minimal' %>
+	<%= button_link_to "Add New Entry", new_entry_path, :class => 'minimal' %>
 </div>
 
 <h2><%= page_title "Home" %></h2>
@@ -31,6 +31,11 @@
 	
 	<div class="column">
 		<h4>Recent Items</h4>
+		<ul class="items">
+			<% @items.each do |item| %>
+				<li class="item"><%= link_to image_tag(item.image, :class => 'thumb'), item %></li>
+			<% end %>	
+		</ul>	
 	</div>	
 	
 </div>		

@@ -19,7 +19,14 @@ Jigso::Application.routes.draw do
     resources :photos, :only => [:create, :destroy]
     resources :votes, :only => [:create, :destroy]
   end  
-  resources :items
+
+  resources :items do
+    member do
+      post 'add'
+      post 'remove'
+    end  
+    resources :votes, :only => [:create, :destroy]
+  end
 
   resources :pages
   

@@ -1,0 +1,7 @@
+<%= simple_form_for @item do |f| %>
+	<%= f.input :title, :input_html => { :title => "#{@item.title || 'Enter Item title'}" } %>
+	<%= f.input :url, :as => :string, :label => 'Item URL', :input_html => { :title => "#{@item.url || 'Enter Item URL'}" } %>
+	<%= f.input :image_url, :as => :string, :label => "Image URL" %>
+	<%= f.input :description, :input_html => { :rows => 3 } %>
+	<%= f.button :submit %>	
+<% end %>

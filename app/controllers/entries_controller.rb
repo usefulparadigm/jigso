@@ -13,8 +13,13 @@ class EntriesController < ApplicationController
     respond_with(@entries)
   end
 
+  def new
+    @entry = Entry.new(:item_id => params[:item_id])
+  end  
+
   def create
     @entry = current_user.entries.build(params[:entry])
+    @entry.keep_the_item = params[:keep_the_item]
     create!
   end
   

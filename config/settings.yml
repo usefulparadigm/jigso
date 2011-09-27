@@ -3,6 +3,9 @@ app:
   slogan: Social Networking Made Easy
   feed_title: "Jigso Feed Updates"
   host_url: http://jigso.heroku.com
+
+item:
+  default_image: no_image_item.png
   
 default_per_page: 10
 ga_ID: UA-123456-1

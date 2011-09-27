@@ -6,6 +6,7 @@ class EntryTest < ActiveSupport::TestCase
     assert true
   end
 end
+
 # == Schema Information
 #
 # Table name: entries
@@ -16,5 +17,9 @@ end
 #  created_at :datetime
 #  updated_at :datetime
 #  state      :string(255)
+#  up_votes   :integer         default(0), not null
+#  down_votes :integer         default(0), not null
+#  body_html  :string(255)
+#  user_id    :integer
 #
 

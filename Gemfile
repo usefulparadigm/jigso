@@ -25,6 +25,7 @@ gem 'will_paginate', '~> 3.0'
 gem 'high_voltage'
 gem 'redcarpet'
 gem 'sitemap_generator'
+gem 'simple_form'
 
 # gem 'fastercsv' # Only required on Ruby 1.8 and below
 # gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git', :branch => 'rails-3.0'
@@ -35,6 +36,8 @@ gem 'make_voteable'
 # gem 'meta_where'
 gem 'acts-as-taggable-on', '~>2.1.0'
 gem 'acts_as_followable'
+
+gem 'httparty'
 
 # background job processing
 gem 'whenever', :require => false

@@ -26,6 +26,7 @@ user3:
   password_salt:  gheureuf
   confirmed_at: <%= Time.now %>
 
+
 # == Schema Information
 #
 # Table name: users
@@ -46,5 +47,7 @@ user3:
 #  confirmation_sent_at   :datetime
 #  created_at             :datetime
 #  updated_at             :datetime
+#  up_votes               :integer         default(0), not null
+#  down_votes             :integer         default(0), not null
 #
 

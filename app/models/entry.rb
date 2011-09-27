@@ -1,5 +1,6 @@
 class Entry < ActiveRecord::Base
-  attr_accessible :title, :body, :attachments_attributes, :tag_list
+  attr_accessible :title, :body, :attachments_attributes, :tag_list, :item_id
+  attr_accessor :keep_the_item
   has_many   :attachments, :as => :attachable, :dependent => :destroy
   accepts_nested_attributes_for :attachments, :allow_destroy => true
   default_scope order('created_at DESC')
@@ -30,12 +31,26 @@ class Entry < ActiveRecord::Base
     simple_format
   end
 
-  def related_entries; find_related_tags end
+  # callbacks
+  before_save do |entry|
+    if entry.item_id
+      item = Item.find_or_create_by_key(entry.item_id)
+      item.users << entry.user if entry.keep_the_item
+    end  
+  end
 
   # activity streams  
-  fires :new_entry, :on => :create, :actor => :user
+  fires :new_entry, :on => :create, :actor => :user, :secondary_subject => :item
 
+  # scopes & utility methods
+  def related_entries; find_related_tags end
+
+  # items
+  def item; Item.find_by_key(self.item_id) end
+  def item=(item); self.item_id = item.key end
+  
 end
+
 # == Schema Information
 #
 # Table name: entries
@@ -46,5 +61,9 @@ end
 #  created_at :datetime
 #  updated_at :datetime
 #  state      :string(255)
+#  up_votes   :integer         default(0), not null
+#  down_votes :integer         default(0), not null
+#  body_html  :string(255)
+#  user_id    :integer
 #
 

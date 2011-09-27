@@ -18,6 +18,6 @@ stylesheets:
     # - public/stylesheets/inuit/inuit.css
     # - public/stylesheets/inuit/grid.inuit.css
     # - public/stylesheets/inuit/dropdown.inuit.css
-    # - public/stylesheets/formalize.css
+    # - public/stylesheets/bootstrap.css
     - public/stylesheets/superfish.css
     - public/stylesheets/application.css

@@ -6,14 +6,17 @@ class PhotoTest < ActiveSupport::TestCase
     assert true
   end
 end
+
 # == Schema Information
 #
-# Table name: photos
+# Table name: attachments
 #
-#  id         :integer         not null, primary key
-#  entry_id   :integer
-#  image      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
+#  id              :integer         not null, primary key
+#  description     :text
+#  file            :string(255)
+#  attachable_id   :integer
+#  attachable_type :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
 #
 

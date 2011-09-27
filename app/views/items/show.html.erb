@@ -1,0 +1,42 @@
+<div>
+	<% if current_user.has_this?(@item) %>
+		You kept this item already 
+		<%= link_to "Items", items_path %>
+		<%= button_to "Remove This Item", remove_item_path(@item) %>
+	<% else %>
+		<%= button_to "Add This Item", add_item_path(@item) %>
+	<% end %>
+</div>
+
+<div class="item clearfix">
+	<%= image_tag(@item.image, :class => 'thumb') %>
+	<div class="content">
+		<h2><%= @item.title %></h2>
+		<%= link_to @item.url, @item.url %>
+		<p>
+			<%= @item.description %>
+		</p>	
+	</div>	
+</div>
+
+<hr />
+<%= button_link_to "Add Entry about This", new_entry_path(:item_id => @item.key), :class => 'minimal' %>
+
+<div class="votes">
+	<h5>Vote</h5>
+	<% if current_user && current_user.voted?(@item) %>
+		당신은 이 항목을 <%= current_user.up_voted?(@item) ? '좋아' : '싫어' %> 합니다. 
+		<%= link_to "취소", item_vote_path(@item, 1), :method => 'delete' %>
+	<% else %>
+		<%= link_to "좋아요", item_votes_path(@item, :flag => 'up'), :method => 'post' %>: <%#= @item.up_votes %> |
+		<%= link_to "싫어요", item_votes_path(@item, :flag => 'down'), :method => 'post' %>: <%#= @item.down_votes %>
+	<% end %>	
+</div>	
+
+
+<h3>People who add this item</h3>
+<ul>
+	<% @users.each do |user| %>
+	<li><%= user %></li>
+	<% end %>
+</ul>		

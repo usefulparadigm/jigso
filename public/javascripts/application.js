@@ -6,6 +6,7 @@ $(function() {
 	$('.rating').raty({path: '/images/raty', start: 3});
 	$(".timeago").timeago();	
 	$("ul.sf-menu").superfish(); 
+	$(":text").labelify();
 
 	// button link
 	// <button class="link" data-href="url">Click</button>

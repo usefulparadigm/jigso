@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
 
   has_many :entries #, :dependent => :destroy
   has_many :recent_activities, :as => :actor, :class_name => "TimelineEvent", :order => "timeline_events.created_at DESC"
+  
+  has_many :user_items
+  has_many :items, :through => :user_items, :uniq => true
+
 
   make_voter
   acts_as_followable
@@ -23,7 +27,10 @@ class User < ActiveRecord::Base
     gravatar_url(:size => 40)
   end
   
+  def has_this?(item); self.items.find_by_key(item.key) end
+  
 end
+
 # == Schema Information
 #
 # Table name: users
@@ -44,5 +51,7 @@ end
 #  confirmation_sent_at   :datetime
 #  created_at             :datetime
 #  updated_at             :datetime
+#  up_votes               :integer         default(0), not null
+#  down_votes             :integer         default(0), not null
 #
 

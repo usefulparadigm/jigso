@@ -29,6 +29,7 @@ Jigso is a skeleton for building brand-new social network site based on Ruby on 
 - [timeline_fu](https://github.com/jamesgolick/timeline_fu) for activity stream
 - [sitemap_generator](https://github.com/kjvarga/sitemap_generator) for sitemaps support
 - [pacecar](https://github.com/thoughtbot/pacecar) for activerecord scoping
+- [simple_form](https://github.com/plataformatec/simple_form) for semantic form markup
 
 - jQuery for frontend javascript processing
 - jQuery plugins

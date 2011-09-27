@@ -6,6 +6,7 @@ class UserTest < ActiveSupport::TestCase
     assert true
   end
 end
+
 # == Schema Information
 #
 # Table name: users
@@ -26,5 +27,7 @@ end
 #  confirmation_sent_at   :datetime
 #  created_at             :datetime
 #  updated_at             :datetime
+#  up_votes               :integer         default(0), not null
+#  down_votes             :integer         default(0), not null
 #
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110920073245) do
+ActiveRecord::Schema.define(:version => 20110927070651) do
 
   create_table "attachments", :force => true do |t|
     t.text     "description"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20110920073245) do
     t.integer  "down_votes", :default => 0, :null => false
     t.string   "body_html"
     t.integer  "user_id"
+    t.string   "item_id"
   end
 
   add_index "entries", ["state"], :name => "index_entries_on_state"
@@ -50,7 +51,7 @@ ActiveRecord::Schema.define(:version => 20110920073245) do
   create_table "items", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.string   "image"
+    t.string   "image_url"
     t.string   "key",         :limit => 20
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -83,6 +84,14 @@ ActiveRecord::Schema.define(:version => 20110920073245) do
     t.integer  "subject_id"
     t.integer  "actor_id"
     t.integer  "secondary_subject_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_items", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "item_id"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

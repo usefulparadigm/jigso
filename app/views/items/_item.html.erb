@@ -1,0 +1,10 @@
+<li class="item clearfix">
+	<%= image_tag(item.image, :class => 'thumb') %>
+	<div class="content">
+		<h5><%= link_to item.title, item %></h5>
+		<%= link_to item.url, item.url %>
+		<p>
+			<%= item.description %>
+		</p>	
+	</div>	
+</li>	

@@ -1,14 +1,8 @@
-<h2><%= page_title "Your Items" %></h2>
-<p>Find me in app/views/items/index.html.erb</p>
+<div class="header">
+	<h2><%= page_title "Your Items" %></h2>
+	<%= button_link_to "New Item", new_item_path, :class => 'minimal' %>
+</div>	
 
-<h3>What is an item?</h3>
-
-<ul>
-	<li>Book</li>
-	<li>Baby</li>
-	<li>Location</li>
-	<li>Puppy</li>
-	<li>Project</li>
-	<li>Photo</li>
-	<li>Portfolio</li>
-</ul>	
+<ul class="items">
+	<%= render @items %>
+</ul>
