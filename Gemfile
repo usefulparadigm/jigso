@@ -5,12 +5,13 @@ gem 'rails', '3.0.10'
 gem 'sqlite3'
 
 gem 'devise'
-gem "omniauth", "0.2.0"
+# gem 'omniauth'
+# gem "omniauth", "0.2.0"
+gem 'oa-oauth', :require => 'omniauth/oauth'
 gem "cancan"
 
 gem 'rails_config'
 gem 'inherited_resources'
-
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'flash_cookie_session'

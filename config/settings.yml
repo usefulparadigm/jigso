@@ -10,3 +10,10 @@ item:
 default_per_page: 10
 ga_ID: UA-123456-1
 disqus_shortname: jigso
+
+api:
+  twitter:
+    consumer_key: KUW5zvjQy7z6rFelVLVViA
+    consumer_secret: iKQL7r0bdvF8MN5uWcYkHDMFHjYd85ZseAjE6dnNwc
+    
+

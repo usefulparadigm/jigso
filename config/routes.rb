@@ -1,14 +1,17 @@
 Jigso::Application.routes.draw do
 
-  match '/auth/:provider/callback', :to => 'sessions#create'
+  match '/auth/:provider/callback' => 'authentications#create'
+  # match '/registrations' => 'registrations#email'
   match '/feed' => 'entries#index',
         :as => :feed,
         :defaults => { :format => 'atom' }
         
   match 'home' => 'home#index'
   match 'settings' => 'settings#index'
-  
-  devise_for :users
+
+  root :to => "main#index"
+
+  devise_for :users #, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }  
   resources :users
 
   resources :entries do
@@ -30,8 +33,6 @@ Jigso::Application.routes.draw do
 
   resources :pages
   
-  root :to => "main#index"
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

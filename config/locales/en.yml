@@ -3,3 +3,8 @@
 
 en:
   hello: "Hello world"
+  fail: 'Auhtentication FAIL!!'
+  success: 'Authentication SUCCESS!!!'
+  signed_in: 'Estamos dentro'
+  welcome: 'Bienvenido'
+

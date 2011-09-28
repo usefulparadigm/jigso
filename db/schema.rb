@@ -10,13 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110927043343) do
+ActiveRecord::Schema.define(:version => 20110928040810) do
 
   create_table "attachments", :force => true do |t|
     t.text     "description"
     t.string   "file"
     t.integer  "attachable_id"
     t.string   "attachable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "authentications", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -114,6 +122,7 @@ ActiveRecord::Schema.define(:version => 20110927043343) do
     t.datetime "updated_at"
     t.integer  "up_votes",                              :default => 0,  :null => false
     t.integer  "down_votes",                            :default => 0,  :null => false
+    t.string   "name"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

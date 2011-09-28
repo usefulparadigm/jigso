@@ -1,0 +1,6 @@
+<div class="activity new_item">
+	<%= link_to(event.actor, user_url(event.actor)) %>
+	add a <%= link_to "new item", event.subject.item %>
+	<abbr class="timeago" title="<%= event.created_at(:to_db) %>"><%= event.created_at.to_s(:short) %></abbr>
+	<%= render 'items/item', :item => event.secondary_subject %>
+</div>

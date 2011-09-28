@@ -1,3 +1,10 @@
+<h3>Or you can sign in with:</h3>
+<% %w(twitter).each do |provider| %>
+    <%= link_to image_tag("icons/#{provider}_32.png"), "/auth/#{provider}" %><br />
+<% end -%>
+
+<hr />
+
 <%- if controller_name != 'sessions' %>
   <%= link_to "Sign in", new_session_path(resource_name) %><br />
 <% end -%>
@@ -20,6 +27,6 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
+    <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %>
   <% end -%>
 <% end -%>
