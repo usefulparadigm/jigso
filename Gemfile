@@ -6,8 +6,8 @@ gem 'sqlite3'
 
 gem 'devise'
 # gem 'omniauth'
-# gem "omniauth", "0.2.0"
-gem 'oa-oauth', :require => 'omniauth/oauth'
+# gem 'oa-oauth', :require => 'omniauth/oauth'
+gem "omniauth", "0.2.0"
 gem "cancan"
 
 gem 'rails_config'

@@ -15,5 +15,7 @@ api:
   twitter:
     consumer_key: KUW5zvjQy7z6rFelVLVViA
     consumer_secret: iKQL7r0bdvF8MN5uWcYkHDMFHjYd85ZseAjE6dnNwc
-    
+  facebook:
+    app_id: "200035996731096"
+    app_secret: 4eab19ee50451662891c3ef466bdd5a5     
 

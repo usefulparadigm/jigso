@@ -4,9 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  # validates_presence_of :name
-  # validates_uniqueness_of :name, :email, :case_sensitive => false    
-
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
@@ -16,13 +13,12 @@ class User < ActiveRecord::Base
   has_many :user_items
   has_many :items, :through => :user_items, :uniq => true
 
-
   make_voter
   acts_as_followable
 
   include Gravtastic
-  gravtastic
-  
+  gravtastic :default => "wavatar"
+
   def to_s; email end
   
   def photo(type=:thumb)
@@ -31,7 +27,11 @@ class User < ActiveRecord::Base
   
   def has_this?(item); self.items.find_by_key(item.key) end
 
+  # def confirmation_required?; false end
+
   # for omniauth authentication
+
+  include RandomKey
 
   def apply_omniauth(omniauth, confirmation)
     # self.email = omniauth['user_info']['email'] if email.blank?
