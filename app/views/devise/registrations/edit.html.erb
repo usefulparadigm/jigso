@@ -1,8 +1,7 @@
-<h2><%= page_title "Settings" %></h2>
+<h2><%= page_title "Settings / Account" %></h2>
 <!-- <h2>Edit <%= resource_name.to_s.humanize %></h2> -->
 
 <%= render 'settings/tabs', :active => 'account' %>
-
 
 <ul class="tabs-content">
   <!-- Give ID that matches HREF of above anchors -->
@@ -32,6 +31,30 @@
   <div><%= f.submit "Update" %></div>
 <% end %>
 
+<hr />
+
+<h3>3rd Party Authentications</h3>
+<table id="authentications">
+	<% %w(twitter facebook).each do |provider| %>
+	<tr>
+		<td class="provider">
+			<%= image_tag "icons/#{provider}_32.png" %>
+			<span class="<%= provider %>"><%= provider.camelize %></span>
+		</td>
+		<% if auth = @authentications.detect { |a| a.provider == provider } %>
+			<td class="status authenticated"><%= auth.uid %></td>
+			<td class="action"><%= link_to "Delete", '#', :class => 'delete' %></td>
+		<% else %>
+			<td class="status"></td>
+			<td class="action">
+				<%= link_to "Add New", "/auth/#{provider}", :class => 'add' %>
+			</td>
+		<% end %>
+	</tr>
+	<% end %>
+</table>	
+
+<hr />
 <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>

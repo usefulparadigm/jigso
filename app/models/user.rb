@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable #, :confirmable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   include Gravtastic
   gravtastic :default => "wavatar"
 
-  def to_s; email end
+  def to_s; name || email end
   
   def photo(type=:thumb)
     gravatar_url(:size => 40)
@@ -30,8 +30,6 @@ class User < ActiveRecord::Base
   # def confirmation_required?; false end
 
   # for omniauth authentication
-
-  include RandomKey
 
   def apply_omniauth(omniauth, confirmation)
     # self.email = omniauth['user_info']['email'] if email.blank?
@@ -53,10 +51,10 @@ class User < ActiveRecord::Base
         user_info['first_name'].blank? || user_info['last_name'].blank?
     end   
     if self.email.blank?
-      self.email = user_info['email'] || "#{omniauth['provider']}+#{user_info['id']}@jigso.com" # just fake email
+      # self.email = user_info['email'] || "#{omniauth['provider']}+#{user_info['id']}@jigso.com" # just fake email
     end  
     # Set a random password for omniauthenticated users
-    self.password, self.password_confirmation = Devise.friendly_token[0,16] # String::RandomString(16)
+    # self.password, self.password_confirmation = Devise.friendly_token[0,16]
     if (confirmation) 
       self.confirmed_at, self.confirmation_sent_at = Time.now  
     end 

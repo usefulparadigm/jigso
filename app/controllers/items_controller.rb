@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_filter :authenticate_user!
   inherit_resources
   
   def index
@@ -6,7 +7,7 @@ class ItemsController < ApplicationController
   end
   
   def show
-    @item = Item.find(params[:id])
+    @item = Item.includes(:entries).find(params[:id])
     @users = @item.users - [current_user]
   end
 

@@ -2,10 +2,11 @@ class Entry < ActiveRecord::Base
   attr_accessible :title, :body, :attachments_attributes, :tag_list, :item_id
   attr_accessor :keep_the_item
   has_many   :attachments, :as => :attachable, :dependent => :destroy
+  belongs_to :user
+  # belongs_to :item
+
   accepts_nested_attributes_for :attachments, :allow_destroy => true
   default_scope order('created_at DESC')
-  
-  belongs_to :user
 
   make_voteable
   acts_as_taggable
@@ -48,7 +49,7 @@ class Entry < ActiveRecord::Base
   # items
   def item; Item.find_by_key(self.item_id) end
   def item=(item); self.item_id = item.key end
-  
+
 end
 
 # == Schema Information

@@ -19,6 +19,12 @@
 	</div>	
 </div>
 
+<h3>Entries about This Item</h3>
+
+<ul class="entries">
+	<%= render @item.entries %>
+</ul>	
+
 <hr />
 <%= button_link_to "Add Entry about This", new_entry_path(:item_id => @item.key), :class => 'minimal' %>
 

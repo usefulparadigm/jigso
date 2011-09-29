@@ -1,6 +1,8 @@
 class Item < ActiveRecord::Base
+  # set_primary_key :key # for loosely-coupled data structure 
   has_many :user_items
   has_many :users, :through => :user_items, :uniq => true
+  has_many :entries, :primary_key => :key
   validates_presence_of :key, :title
   validates_uniqueness_of :key
   default_scope order('created_at DESC')

@@ -1618,9 +1618,11 @@ textarea {
   right: 10px; }
   #top_nav ul a:hover {
     text-decoration: none; }
-  #top_nav > div a {
+  #top_nav ul.login li {
+    display: inline; }
+  #top_nav ul.login > li > a {
     padding: 0 10px; }
-  #top_nav > div, #top_nav > div > a, #top_nav > div > a:visited {
+  #top_nav ul.login a, #top_nav ul.login a:visited {
     color: #fff; }
 
 .sf-menu {
@@ -1640,7 +1642,7 @@ textarea {
 #footer {
   font-size: 0.9em;
   background-color: #444;
-  padding: 10px 10px; }
+  padding: 10px; }
   #footer, #footer a {
     color: #ddd; }
   #footer ul {
@@ -1670,6 +1672,10 @@ textarea {
     top: 0;
     right: 10px; }
 
+/* 
+	http://ryanfait.com/resources/footer-stick-to-bottom-of-page/
+	http://www.lwis.net/journal/2008/02/08/pure-css-sticky-footer/ 
+*/
 .activities {
   margin-left: 10px; }
 
@@ -1694,6 +1700,23 @@ textarea {
   .entry .comment_count a, .item .comment_count a {
     font-size: 0.9em;
     color: gray; }
+
+#authentications {
+  width: 80%; }
+  #authentications tr {
+    border-top: 1px solid #ededed; }
+  #authentications tr:first-child {
+    border-top: none; }
+  #authentications img {
+    vertical-align: middle; }
+  #authentications .status {
+    padding-left: 20px; }
+    #authentications .status.authenticated {
+      background: url(/images/chk_on.png) no-repeat left; }
+  #authentications .action a {
+    color: green; }
+  #authentications .action a.delete {
+    color: red; }
 
 /* Success, info, notice and error/alert boxes
 -------------------------------------------------------------- */

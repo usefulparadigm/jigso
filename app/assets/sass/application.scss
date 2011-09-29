@@ -79,9 +79,10 @@ textarea {
 	position: absolute;
 	top: 5px; right: 10px; 
 	ul a:hover { text-decoration: none; }
-	> div {
-		a { padding: 0 10px; }
-		&, & > a, & > a:visited { color: #fff; }
+	ul.login {
+		li { display: inline; }
+		> li > a { padding: 0 10px; }
+		a, a:visited { color: #fff; }
 	}
 }
 
@@ -102,7 +103,7 @@ textarea {
 	font-size: 0.9em;
 	background-color: #444;
 	&, & a { color: #ddd; }
-	padding: 10px 10px;
+	padding: 10px;
 	ul { 
 		float: left;
 		margin: 0; padding: 0;
@@ -127,6 +128,29 @@ textarea {
 	position: relative;
 	button { position: absolute; top: 0; right: 10px; }
 }
+
+// sticky footer
+/* 
+	http://ryanfait.com/resources/footer-stick-to-bottom-of-page/
+	http://www.lwis.net/journal/2008/02/08/pure-css-sticky-footer/ 
+*/	
+
+// html, body, #wrap { height: 100%; }
+// 
+// #wrap { 
+// 	min-height: 100%;
+// 	height: auto !important;
+// 	margin: 0 auto;
+// }
+// 
+// #main { padding-bottom: 3em; }
+// 
+// #footer {
+//  clear: both;
+//  position: relative;
+//  z-index: 10;
+//  margin-top: -3em;
+// }
 
 // Activities (Timeline)
 // ------------------------------
@@ -157,6 +181,21 @@ textarea {
 }
 
 
+// Settings
+
+#authentications {
+	width: 80%;
+	tr { border-top: 1px solid #ededed; }
+	tr:first-child { border-top: none; }
+	img { vertical-align: middle; }
+	.status {
+		padding-left: 20px;
+		&.authenticated { background: url(/images/chk_on.png) no-repeat left; }
+	}
+	.action a { color: green; }
+	.action a.delete { color: red; }
+}
+
 /* Success, info, notice and error/alert boxes
 -------------------------------------------------------------- */
 
@@ -180,5 +219,4 @@ textarea {
 // .css2 { font-size: 1.2em; }
 // .css3 { font-size: 1.4em; }
 // .css4 { font-size: 1.6em; }
-
 

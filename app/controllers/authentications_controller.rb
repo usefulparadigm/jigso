@@ -1,30 +1,33 @@
 class AuthenticationsController < ApplicationController
   before_filter :authenticate_user!, :except => [:create]
 
-  def index
-    @authentications = current_user.authentications # if current_user
-  end
-  
   # Create an authentication when this is called from
   # the authentication provider callback
   def create
     omniauth = request.env["omniauth.auth"] 
     authentication = Authentication.where(:provider => omniauth['provider'], :uid => omniauth['uid']).first
-    if authentication 
-      flash[:notice] = t(:signed_in)
-      sign_in_and_redirect(:user, authentication.user)
-    elsif current_user
-      current_user.authentications.create!(:provider => omniauth['provider'], :uid => omniauth['uid'])
-      flash[:notice] = t(:success)
-      redirect_to authentications_url
-    elsif user = create_new_omniauth_user(omniauth)
-      user.authentications.create!(:provider => omniauth['provider'], :uid => omniauth['uid'])
-      flash[:notice] = t(:welcome)
-      sign_in_and_redirect(:user, user)
-    else
-      flash[:alert] = t(:fail)
-      redirect_to new_user_registration_url   
-    end
+    if current_user
+      if authentication
+        flash[:notice] = "Sorry! duplicated authentication."
+        redirect_to edit_user_registration_url
+      else
+        current_user.authentications.create!(:provider => omniauth['provider'], :uid => omniauth['uid'])
+        flash[:notice] = t(:success)
+        redirect_to edit_user_registration_url
+      end    
+    else # sign in
+      if authentication
+        flash[:notice] = t(:signed_in)
+        sign_in_and_redirect(:user, authentication.user)
+      elsif user = create_new_omniauth_user(omniauth)
+        user.authentications.create!(:provider => omniauth['provider'], :uid => omniauth['uid'])
+        flash[:notice] = t(:welcome)
+        sign_in_and_redirect(:user, user)
+      else
+        flash[:alert] = t(:fail)
+        redirect_to new_user_registration_url   
+      end
+    end      
   end
   
   # Destroy an authentication
@@ -39,8 +42,8 @@ class AuthenticationsController < ApplicationController
   
   def create_new_omniauth_user(omniauth)
     user = User.new
-    user.apply_omniauth(omniauth, true)
-    if user.save
+    user.apply_omniauth(omniauth, false)
+    if user.save(false) # bypass validation!
       user
     else
       nil
