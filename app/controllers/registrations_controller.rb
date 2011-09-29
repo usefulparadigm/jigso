@@ -1,11 +1,9 @@
 class RegistrationsController < Devise::RegistrationsController
-  before_filter :authenticate_user!
+  # before_filter :authenticate_user!, :only => ['edit']
 
   def edit
     @authentications = current_user.authentications # if current_user
-    render :action => 'devise/registrations/edit'
   end
-
 
   def email
     if session[:omniauth]

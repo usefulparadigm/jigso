@@ -1,0 +1,4 @@
+<h3>Or you can sign in with:</h3>
+<% %w(twitter facebook).each do |provider| %>
+    <%= link_to image_tag("icons/#{provider}_32.png"), "/auth/#{provider}" %>
+<% end -%>
