@@ -28,8 +28,6 @@ gem 'redcarpet'
 gem 'sitemap_generator'
 gem 'simple_form'
 gem 'dynamic_form'
-# gem "recaptcha", :require => "recaptcha/rails"
-gem 'humanizer'
 gem 'gotcha'
 
 # gem 'fastercsv' # Only required on Ruby 1.8 and below
