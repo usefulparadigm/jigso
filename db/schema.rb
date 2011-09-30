@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110928162310) do
+ActiveRecord::Schema.define(:version => 20110930064337) do
 
   create_table "attachments", :force => true do |t|
     t.text     "description"
@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(:version => 20110928162310) do
     t.integer  "up_votes",                              :default => 0,  :null => false
     t.integer  "down_votes",                            :default => 0,  :null => false
     t.string   "name"
+    t.text     "prefs"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

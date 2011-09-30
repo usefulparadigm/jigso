@@ -34,9 +34,7 @@ gem 'gotcha'
 # gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git', :branch => 'rails-3.0'
 
 gem "transitions", :require => ["transitions", "active_record/transitions"]
-gem 'annotate' #, :git => 'git://github.com/ctran/annotate_models.git'
 gem 'make_voteable'
-# gem 'meta_where'
 gem 'acts-as-taggable-on', '~>2.1.0'
 gem 'acts_as_followable'
 
@@ -52,6 +50,7 @@ group :development do
   gem 'guard-livereload'
   gem 'guard-pow'
   # gem 'rails-footnotes', '>= 3.7.5.rc4'
+  gem 'annotate' #, :git => 'git://github.com/ctran/annotate_models.git'
 end
 
 group :test do

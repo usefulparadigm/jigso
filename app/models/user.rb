@@ -1,3 +1,5 @@
+require 'ostruct'
+
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
@@ -12,6 +14,14 @@ class User < ActiveRecord::Base
   has_many :recent_activities, :as => :actor, :class_name => "TimelineEvent", :order => "timeline_events.created_at DESC"
   has_many :user_items
   has_many :items, :through => :user_items, :uniq => true
+
+  # user preferences
+  serialize :prefs, OpenStruct
+  def prefs; read_attribute(:prefs) || OpenStruct.new(
+    # default values
+    :foo => 'bar'
+  )
+  end  
 
   make_voter
   acts_as_followable

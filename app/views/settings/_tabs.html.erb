@@ -1,6 +1,5 @@
 <ul class="tabs">
 	<li><%= link_to "Profile", settings_path, :class => "#{'active' if active == 'settings' }" %></li>
   <li><%= link_to "Account", edit_user_registration_path, :class => "#{'active' if active == 'account' }" %></li>
-  <li><%= link_to "Notification" %></li>
-  <li><%= link_to "Share" %></li>
+  <li><%= link_to "Application", "/settings/app", :class => "#{'active' if active == 'app' }" %></li>
 </ul>

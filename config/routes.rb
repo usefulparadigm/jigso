@@ -8,6 +8,7 @@ Jigso::Application.routes.draw do
         
   match 'home' => 'home#index'
   match 'settings' => 'settings#index'
+  match 'settings/app' => 'settings#app'
 
   root :to => "main#index"
 
