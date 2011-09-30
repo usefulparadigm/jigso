@@ -31,6 +31,7 @@ Jigso is a skeleton for building brand-new social network site based on Ruby on 
 - [pacecar](https://github.com/thoughtbot/pacecar) for activerecord scoping
 - [simple_form](https://github.com/plataformatec/simple_form) for semantic form markup
 - [dynamic_form](https://github.com/joelmoss/dynamic_form) for error messages handling
+- [recaptcha](https://github.com/ambethia/recaptcha) for reCAPTCHA
 
 - jQuery for frontend javascript processing
 - jQuery plugins

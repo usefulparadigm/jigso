@@ -1,9 +1,22 @@
 class RegistrationsController < Devise::RegistrationsController
-  # before_filter :authenticate_user!, :only => ['edit']
+  before_filter :authenticate_user! #, :only => ['edit']
 
   def edit
     @authentications = current_user.authentications # if current_user
   end
+  
+  # https://github.com/plataformatec/devise/wiki/How-To:-Use-Recaptcha-with-Devise  
+  def create
+    if verify_recaptcha
+      super
+    else
+      flash.delete :recaptcha_error # gets rid of the default error from the recaptcha gem,
+      build_resource
+      clean_up_passwords(resource)
+      flash[:alert] = "There was an error with the recaptcha code below. Please re-enter the code."
+      render_with_scope :new
+    end
+  end    
 
   def email
     if session[:omniauth]
