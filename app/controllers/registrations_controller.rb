@@ -5,15 +5,13 @@ class RegistrationsController < Devise::RegistrationsController
     @authentications = current_user.authentications # if current_user
   end
   
-  # https://github.com/plataformatec/devise/wiki/How-To:-Use-Recaptcha-with-Devise  
   def create
-    if verify_recaptcha
+    if gotcha_valid?
       super
     else
-      flash.delete :recaptcha_error # gets rid of the default error from the recaptcha gem,
       build_resource
       clean_up_passwords(resource)
-      flash[:alert] = "There was an error with the recaptcha code below. Please re-enter the code."
+      flash[:alert] = "There was an error while verifying whether you are human."
       render_with_scope :new
     end
   end    

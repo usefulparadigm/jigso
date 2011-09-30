@@ -12,9 +12,6 @@ ga_ID: UA-123456-1
 disqus_shortname: jigso
 
 api:
-  recaptcha:
-    public_key: 6LfEpcgSAAAAACg7t6geAakhasmOiLATRO1NUp3T 
-    private_key: 6LfEpcgSAAAAAG7cYhKRxl8_bCi5NaSH3A3MLdlU
   twitter:
     consumer_key: KUW5zvjQy7z6rFelVLVViA
     consumer_secret: iKQL7r0bdvF8MN5uWcYkHDMFHjYd85ZseAjE6dnNwc
