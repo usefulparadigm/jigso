@@ -1,5 +1,3 @@
-require 'ostruct'
-
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
@@ -7,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable #, :confirmable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :prefs
 
   has_many :authentications, :dependent => :destroy
   has_many :entries #, :dependent => :destroy
@@ -16,12 +14,15 @@ class User < ActiveRecord::Base
   has_many :items, :through => :user_items, :uniq => true
 
   # user preferences
-  serialize :prefs, OpenStruct
-  def prefs; read_attribute(:prefs) || OpenStruct.new(
+  include Hashie
+  serialize :prefs, Mash
+  def prefs; read_attribute(:prefs) || Mash.new(
     # default values
-    :foo => 'bar'
+    :notify_when_sombody_touch_me => true,
+    :publish_activity_on_add_item => false
   )
   end  
+  def prefs=(hash); write_attribute :prefs, Mash.new(hash) end
 
   make_voter
   acts_as_followable

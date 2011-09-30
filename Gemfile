@@ -39,6 +39,7 @@ gem 'acts-as-taggable-on', '~>2.1.0'
 gem 'acts_as_followable'
 
 gem 'httparty'
+gem 'hashie'
 
 # background job processing
 gem 'whenever', :require => false
