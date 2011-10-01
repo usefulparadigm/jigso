@@ -4,23 +4,11 @@
 <%= simple_form_for current_user do |f| %>
 	<%= f.fields_for :prefs, current_user.prefs do |p| %>
 
-	<div class="box">
-		<h3>Notification</h3>
-		<label for="notify_when_sombody_touch_me">
-			<%= p.check_box :notify_when_sombody_touch_me, :id => 'notify_when_sombody_touch_me' %>
-			notify_when_sombody_touch_me
-		</label>	
-	</div>
-
-	<hr />
-
-	<div class="box">
-		<h3>Share</h3>
-		<% %w(publish_activity_on_add_item).each do |field| %>
-			<label for="<%= field %>"><%= p.check_box field, :id => field %>
-				<%= field %></label>
-		<% end %>		
-	</div>	
+		<div class="box">
+			<% UserPreference::DEFAULT_OPTIONS.keys.each do |key| %>
+				<%= p.input key, :as => :boolean %>
+			<% end %>
+		</div>	
 
 	<% end %>
 	<%= f.button :submit %>

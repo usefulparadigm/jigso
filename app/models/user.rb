@@ -14,15 +14,10 @@ class User < ActiveRecord::Base
   has_many :items, :through => :user_items, :uniq => true
 
   # user preferences
-  include Hashie
-  serialize :prefs, Mash
-  def prefs; read_attribute(:prefs) || Mash.new(
-    # default values
-    :notify_when_sombody_touch_me => true,
-    :publish_activity_on_add_item => false
-  )
-  end  
-  def prefs=(hash); write_attribute :prefs, Mash.new(hash) end
+  serialize :prefs, UserPreference
+  def prefs; read_attribute(:prefs) || UserPreference.new end
+  def prefs=(hash); write_attribute :prefs, UserPreference.new(hash) end
+
 
   make_voter
   acts_as_followable
