@@ -35,6 +35,12 @@ Jigso::Application.routes.draw do
   resources :user_items, :only => [:create, :destroy]
 
   resources :pages
+
+  namespace :api do 
+    namespace :v1 do
+      # resources :items
+    end
+  end    
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
