@@ -1,7 +1,7 @@
 <div class="entry clearfix">
 	<%#= link_to image_tag(first_image(entry.body_html), :width => 80, :height => 80, :class => 'thumb'), entry %>
 	<% if entry.item %>
-		<%= link_to image_tag(entry.item.image_url, :width => 70, :class => 'thumb'), entry.item %>
+		<%= link_to image_tag(entry.item.image, :width => 70, :class => 'thumb'), entry.item %>
 	<% end %>	
 	<div class="content">
 		<%= link_to image_tag(entry.user.gravatar_url(:size => 40), :class => 'avatar') %>

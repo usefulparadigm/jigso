@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_filter :authenticate_user!
-  # inherit_resources
+  inherit_resources
   
   def index
     @items = current_user.items

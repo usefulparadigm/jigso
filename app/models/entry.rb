@@ -37,6 +37,7 @@ class Entry < ActiveRecord::Base
 
   # callbacks
   before_save do |entry|
+    # add user_items automatically
     if entry.item_id
       # item = Item.find_or_create_by_url(entry.item_id)
       # item.users << entry.user if entry.keep_the_item
