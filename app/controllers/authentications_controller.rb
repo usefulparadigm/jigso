@@ -42,8 +42,8 @@ class AuthenticationsController < ApplicationController
   
   def create_new_omniauth_user(omniauth)
     user = User.new
-    user.apply_omniauth(omniauth, false)
-    if user.save(false) # bypass validation!
+    user.apply_omniauth(omniauth, true) # confirm automatically!
+    if user.save(:validate => false) # bypass validation!
       user
     else
       nil

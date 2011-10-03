@@ -8,6 +8,10 @@ $(function() {
 	$("ul.sf-menu").superfish(); 
 	$(":text").labelify();
 
+	// $('#flash').delay(500).fadeIn('normal', function() {
+	// 	$(this).delay(2500).fadeOut();
+	// });
+
 	// button link
 	// <button class="link" data-href="url">Click</button>
 	$('button.link').live('click', function() { window.location.href = $(this).data('href'); });

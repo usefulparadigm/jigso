@@ -2,6 +2,7 @@ app:
   title: Jigso
   slogan: Social Networking Made Easy
   feed_title: "Jigso Feed Updates"
+  host_name: jigso.heroku.com
   host_url: http://jigso.heroku.com
 
 item:
