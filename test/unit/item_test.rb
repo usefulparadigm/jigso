@@ -7,6 +7,7 @@ class ItemTest < ActiveSupport::TestCase
   end
 end
 
+
 # == Schema Information
 #
 # Table name: items
@@ -14,8 +15,8 @@ end
 #  id          :integer         not null, primary key
 #  title       :string(255)
 #  description :text
-#  image       :string(255)
-#  key         :string(20)
+#  url         :string(255)
+#  image_url   :string(255)
 #  created_at  :datetime
 #  updated_at  :datetime
 #

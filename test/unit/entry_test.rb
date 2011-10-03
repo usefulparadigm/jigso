@@ -7,6 +7,7 @@ class EntryTest < ActiveSupport::TestCase
   end
 end
 
+
 # == Schema Information
 #
 # Table name: entries
@@ -14,12 +15,13 @@ end
 #  id         :integer         not null, primary key
 #  title      :string(255)
 #  body       :text
+#  body_html  :text
+#  item_id    :integer
+#  user_id    :integer
+#  state      :string(255)
 #  created_at :datetime
 #  updated_at :datetime
-#  state      :string(255)
 #  up_votes   :integer         default(0), not null
 #  down_votes :integer         default(0), not null
-#  body_html  :string(255)
-#  user_id    :integer
 #
 

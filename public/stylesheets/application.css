@@ -1659,6 +1659,11 @@ textarea {
   #footer .jigso {
     float: right; }
 
+/* 
+	http://ryanfait.com/resources/footer-stick-to-bottom-of-page/
+	http://www.lwis.net/journal/2008/02/08/pure-css-sticky-footer/ 
+	http://matthewjamestaylor.com/blog/keeping-footers-at-the-bottom-of-the-page 
+*/
 #sub h5 {
   background-color: gray;
   color: #fff;
@@ -1672,10 +1677,6 @@ textarea {
     top: 0;
     right: 10px; }
 
-/* 
-	http://ryanfait.com/resources/footer-stick-to-bottom-of-page/
-	http://www.lwis.net/journal/2008/02/08/pure-css-sticky-footer/ 
-*/
 .activities {
   margin-left: 10px; }
 
@@ -1700,6 +1701,8 @@ textarea {
   .entry .comment_count a, .item .comment_count a {
     font-size: 0.9em;
     color: gray; }
+  .entry .status, .item .status {
+    float: right; }
 
 #authentications {
   width: 80%; }

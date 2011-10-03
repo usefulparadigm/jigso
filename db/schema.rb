@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110930064337) do
+ActiveRecord::Schema.define(:version => 20110928032518) do
 
   create_table "attachments", :force => true do |t|
     t.text     "description"
@@ -32,17 +32,15 @@ ActiveRecord::Schema.define(:version => 20110930064337) do
   create_table "entries", :force => true do |t|
     t.string   "title"
     t.text     "body"
+    t.text     "body_html"
+    t.integer  "item_id"
+    t.integer  "user_id"
+    t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "state"
     t.integer  "up_votes",   :default => 0, :null => false
     t.integer  "down_votes", :default => 0, :null => false
-    t.string   "body_html"
-    t.integer  "user_id"
-    t.string   "item_id"
   end
-
-  add_index "entries", ["state"], :name => "index_entries_on_state"
 
   create_table "follows", :force => true do |t|
     t.integer  "followable_id",   :null => false
@@ -59,13 +57,11 @@ ActiveRecord::Schema.define(:version => 20110930064337) do
   create_table "items", :force => true do |t|
     t.string   "title"
     t.text     "description"
+    t.string   "url"
     t.string   "image_url"
-    t.string   "key"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "items", ["key"], :name => "index_items_on_key"
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
@@ -118,12 +114,13 @@ ActiveRecord::Schema.define(:version => 20110930064337) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string   "name"
+    t.string   "nickname"
+    t.text     "prefs"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "up_votes",                              :default => 0,  :null => false
     t.integer  "down_votes",                            :default => 0,  :null => false
-    t.string   "name"
-    t.text     "prefs"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

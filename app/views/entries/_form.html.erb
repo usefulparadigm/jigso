@@ -1,4 +1,4 @@
-<%= nested_form_for @entry, :html => { :multipart => true } do |f| %>
+<%= nested_form_for [@entry.item, @entry], :html => { :multipart => true } do |f| %>
   <% if @entry.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
@@ -12,18 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :item_id, 'URL' %>
-    <%= f.text_field :item_id %>
-  </div>
-
-  <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :keep_the_item, 'Keep as my item?' %>
-    <%= check_box_tag :keep_the_item %>
   </div>
 
   <div class="field">

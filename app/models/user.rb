@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
     gravatar_url(:size => 40)
   end
   
-  def has_this?(item); self.items.find_by_key(item.key) end
+  def has_this?(item); !self.items.first(item.id).empty? end
 
   # def confirmation_required?; false end
 
@@ -95,6 +95,7 @@ class User < ActiveRecord::Base
 
 end
 
+
 # == Schema Information
 #
 # Table name: users
@@ -113,6 +114,9 @@ end
 #  confirmation_token     :string(255)
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
+#  name                   :string(255)
+#  nickname               :string(255)
+#  prefs                  :text
 #  created_at             :datetime
 #  updated_at             :datetime
 #  up_votes               :integer         default(0), not null

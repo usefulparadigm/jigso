@@ -7,6 +7,7 @@ class UserTest < ActiveSupport::TestCase
   end
 end
 
+
 # == Schema Information
 #
 # Table name: users
@@ -25,6 +26,9 @@ end
 #  confirmation_token     :string(255)
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
+#  name                   :string(255)
+#  nickname               :string(255)
+#  prefs                  :text
 #  created_at             :datetime
 #  updated_at             :datetime
 #  up_votes               :integer         default(0), not null

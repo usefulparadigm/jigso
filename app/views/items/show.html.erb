@@ -1,16 +1,15 @@
-<div>
-	<% if current_user.has_this?(@item) %>
-		You kept this item already 
-		<%= link_to "Items", items_path %>
-		<%= button_to "Remove This Item", remove_item_path(@item) %>
-	<% else %>
-		<%= button_to "Add This Item", add_item_path(@item) %>
-	<% end %>
-</div>
-
 <div class="item clearfix">
 	<%= image_tag(@item.image, :class => 'thumb') %>
 	<div class="content">
+
+		<div class="status">
+			<% if current_user.has_this?(@item) %>
+				<%= button_to "Remove This Item", user_item_path(@item), :method => :delete %>
+			<% else %>
+				<%= button_to "Add This Item", user_items_path(:item_id => @item.id) %>
+			<% end %>
+		</div>
+
 		<h2><%= @item.title %></h2>
 		<%= link_to @item.url, @item.url %>
 		<p>
@@ -26,7 +25,7 @@
 </ul>	
 
 <hr />
-<%= button_link_to "Add Entry about This", new_entry_path(:item_id => @item.key), :class => 'minimal' %>
+<%= button_link_to "Add Entry about This", new_item_entry_path(@item), :class => 'minimal' %>
 
 <div class="votes">
 	<h5>Vote</h5>

@@ -1,7 +1,9 @@
 class EntriesController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :find_item, :only => [:create]
   respond_to :html, :json
   respond_to :atom, :only => :index
+
   inherit_resources
   load_and_authorize_resource
 
@@ -19,7 +21,7 @@ class EntriesController < ApplicationController
 
   def create
     @entry = current_user.entries.build(params[:entry])
-    @entry.keep_the_item = params[:keep_the_item]
+    @entry.item = @item
     create!
   end
   
@@ -36,5 +38,11 @@ class EntriesController < ApplicationController
     flash[:notice] = "You are now stop following this item."
     redirect_to :back
   end
+  
+  private
+  
+  def find_item
+    @item ||= Item.find(params[:item_id])
+  end  
 
 end

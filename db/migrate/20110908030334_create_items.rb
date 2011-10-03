@@ -3,16 +3,14 @@ class CreateItems < ActiveRecord::Migration
     create_table :items do |t|
       t.string :title
       t.text :description
+      t.string :url
       t.string :image_url
-      t.string :key
 
       t.timestamps
     end
-    add_index :items, :key
   end
 
   def self.down
-    remove_index :items, :key
     drop_table :items
   end
 end

@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_filter :authenticate_user!
-  inherit_resources
+  # inherit_resources
   
   def index
     @items = current_user.items
@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.find_by_key(params[:item][:url]) || Item.create(params[:item])
+    @item = Item.find_by_url(params[:item][:url]) || Item.create(params[:item])
     UserItem.create(:user => current_user, :item => @item)
     redirect_to @item
   end

@@ -3,6 +3,10 @@ class CreateEntries < ActiveRecord::Migration
     create_table :entries do |t|
       t.string :title
       t.text :body
+      t.text :body_html
+      t.integer :item_id
+      t.integer :user_id
+      t.string :state
 
       t.timestamps
     end
