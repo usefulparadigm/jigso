@@ -7,10 +7,12 @@
 	</p>
 	<p>
 		Enjoy!
-		<div>
-			<%= button_link_to "Sign Up Now", new_user_registration_path, :class => 'dribbble' %> 
-		</div>	
-		<%= render 'shared/omniauth' %>
+		<% unless user_signed_in? %>
+			<div>
+				<%= button_link_to "Sign Up Now", new_user_registration_path, :class => 'dribbble' %> 
+			</div>	
+			<%= render 'shared/omniauth' %>
+		<% end %>	
 	</p>	
 </div>
 
