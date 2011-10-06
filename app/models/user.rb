@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable,
+         :token_authenticatable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :prefs
@@ -18,6 +19,9 @@ class User < ActiveRecord::Base
   def prefs; read_attribute(:prefs) || UserPreference.new end
   def prefs=(hash); write_attribute :prefs, UserPreference.new(hash) end
 
+  # callbacks
+  before_save :ensure_authentication_token
+  
 
   make_voter
   acts_as_followable
@@ -32,6 +36,7 @@ class User < ActiveRecord::Base
   end
   
   def has_this?(item); !self.items.first(item.id).empty? end
+
 
   # def confirmation_required?; false end
 

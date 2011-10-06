@@ -1,6 +1,14 @@
 <h2><%= page_title "Settings / Application" %></h2>
 <%= render 'tabs', :active => 'app' %>
 
+<h3>API authentication</h3>
+<div class="box">
+	Your API auth_token: <strong><%= current_user.authentication_token %></strong>
+</div>	
+
+
+<h3>Other Settings</h3>
+
 <%= simple_form_for current_user do |f| %>
 	<%= f.fields_for :prefs, current_user.prefs do |p| %>
 

@@ -11,7 +11,8 @@ class UserPreference
 
   def initialize(options={})
     DEFAULT_OPTIONS.each do |key, value| 
-      instance_variable_set("@#{key}".to_sym, options[key] || value)
+      # instance_variable_set("@#{key}".to_sym, options[key] || value)
+      self.send("#{key}=", options[key] || value)
     end  
   end
 
