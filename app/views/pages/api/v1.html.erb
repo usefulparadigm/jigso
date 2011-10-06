@@ -1,0 +1,13 @@
+<h2><%=title "API" %></h2>
+<p>Find me in app/views/pages/api/v1.html.erb</p>
+
+<pre>
+$ rake routes | grep api
+          api_v1_entries GET    /api/v1/entries(.:format)                  {:controller=>"api/v1/entries", :action=>"index"}
+                         POST   /api/v1/entries(.:format)                  {:controller=>"api/v1/entries", :action=>"create"}
+        new_api_v1_entry GET    /api/v1/entries/new(.:format)              {:controller=>"api/v1/entries", :action=>"new"}
+       edit_api_v1_entry GET    /api/v1/entries/:id/edit(.:format)         {:controller=>"api/v1/entries", :action=>"edit"}
+            api_v1_entry GET    /api/v1/entries/:id(.:format)              {:controller=>"api/v1/entries", :action=>"show"}
+                         PUT    /api/v1/entries/:id(.:format)              {:controller=>"api/v1/entries", :action=>"update"}
+                         DELETE /api/v1/entries/:id(.:format)              {:controller=>"api/v1/entries", :action=>"destroy"}
+</pre>
