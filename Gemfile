@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.10'
 
 gem 'sqlite3'
+# gem 'mysql2'
 
 gem 'devise'
 # gem 'omniauth'
@@ -44,22 +45,19 @@ gem 'hashie'
 # background job processing
 gem 'whenever', :require => false
 
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'factory_girl'
+end
+
 group :development do
   gem 'wirble'
   gem 'awesome_print'
   gem 'guard-sass'
   gem 'guard-livereload'
   gem 'guard-pow'
-  # gem 'rails-footnotes', '>= 3.7.5.rc4'
-  gem 'annotate' #, :git => 'git://github.com/ctran/annotate_models.git'
-end
-
-group :test do
-  gem 'factory_girl'
-end
-
-group :production do
-  # gem 'mysql2'
 end
 
 # Use unicorn as the web server
