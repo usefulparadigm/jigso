@@ -10,6 +10,7 @@ gem 'devise'
 # gem 'oa-oauth', :require => 'omniauth/oauth'
 gem "omniauth", "0.2.0"
 gem "cancan"
+# gem 'devise_openid_authenticatable'
 
 gem 'rails_config'
 gem 'inherited_resources'
